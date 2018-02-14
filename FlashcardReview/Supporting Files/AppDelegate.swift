@@ -19,18 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         -> Bool {
             
             FirebaseApp.configure()
-            
-            // 1) Setup view controller
-            let categoriesViewController = CategoriesViewController()
-            let navController = UINavigationController(rootViewController: categoriesViewController)
-            
-            
-            // 2) Setup window
-            window = UIWindow(frame: UIScreen.main.bounds)
-            window?.rootViewController = navController
-            window?.makeKeyAndVisible()
-            
-            
+                        
             return true
     }
 

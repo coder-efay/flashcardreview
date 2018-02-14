@@ -10,12 +10,7 @@
 		75045DA761E57101FD76E598 /* Pods_FlashcardReview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF5429241D7B6A18B5BDB90 /* Pods_FlashcardReview.framework */; };
 		812050212032406F00D205F3 /* FirebaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812050202032406F00D205F3 /* FirebaseAPIClient.swift */; };
 		8120506F2033E75F00D205F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120506E2033E75F00D205F3 /* LoginViewController.swift */; };
-		812050712033E76A00D205F3 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812050702033E76A00D205F3 /* CategoriesViewController.swift */; };
 		812050732033E77C00D205F3 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812050722033E77C00D205F3 /* QuizViewController.swift */; };
-		812050752033E79100D205F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812050742033E79100D205F3 /* LoginView.swift */; };
-		812050772033E79C00D205F3 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812050762033E79C00D205F3 /* CreateAccountView.swift */; };
-		812050792033E7B000D205F3 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812050782033E7B000D205F3 /* CategoriesView.swift */; };
-		8120507B2033E7B900D205F3 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120507A2033E7B900D205F3 /* QuizView.swift */; };
 		8120507D2033E7CE00D205F3 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120507C2033E7CE00D205F3 /* Stylesheet.swift */; };
 		812050802033EAE200D205F3 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120507F2033EAE200D205F3 /* CategoryTableViewCell.swift */; };
 		814987CE2032379E00259A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814987CD2032379E00259A16 /* AppDelegate.swift */; };
@@ -25,6 +20,8 @@
 		814987E32032379E00259A16 /* FlashcardReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814987E22032379E00259A16 /* FlashcardReviewTests.swift */; };
 		814987EE2032379E00259A16 /* FlashcardReviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814987ED2032379E00259A16 /* FlashcardReviewUITests.swift */; };
 		814987FC203237EB00259A16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 814987FB203237EB00259A16 /* GoogleService-Info.plist */; };
+		8177EBA52034FFC900D646CD /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBA42034FFC900D646CD /* CreateNewAccountViewController.swift */; };
+		8177EBA7203500BF00D646CD /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBA6203500BF00D646CD /* CategoriesTableViewController.swift */; };
 		8C2B3AEF7576C415ECCCF6C5 /* Pods_FlashcardReviewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 768AE29B388BFE528AC0A2D4 /* Pods_FlashcardReviewTests.framework */; };
 		9580F630438FEF9D2F461ECF /* Pods_FlashcardReviewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6C5C23B6ED92392669CED9 /* Pods_FlashcardReviewUITests.framework */; };
 /* End PBXBuildFile section */
@@ -54,12 +51,7 @@
 		768AE29B388BFE528AC0A2D4 /* Pods_FlashcardReviewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashcardReviewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		812050202032406F00D205F3 /* FirebaseAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAPIClient.swift; sourceTree = "<group>"; };
 		8120506E2033E75F00D205F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		812050702033E76A00D205F3 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		812050722033E77C00D205F3 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
-		812050742033E79100D205F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		812050762033E79C00D205F3 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
-		812050782033E7B000D205F3 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
-		8120507A2033E7B900D205F3 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		8120507C2033E7CE00D205F3 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		8120507F2033EAE200D205F3 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		814987CA2032379E00259A16 /* FlashcardReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashcardReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +67,8 @@
 		814987ED2032379E00259A16 /* FlashcardReviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardReviewUITests.swift; sourceTree = "<group>"; };
 		814987EF2032379E00259A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		814987FB203237EB00259A16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8177EBA42034FFC900D646CD /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewController.swift; sourceTree = "<group>"; };
+		8177EBA6203500BF00D646CD /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		8E6C5C23B6ED92392669CED9 /* Pods_FlashcardReviewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashcardReviewUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F1022D12223D6493F7671C /* Pods-FlashcardReviewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashcardReviewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashcardReviewTests/Pods-FlashcardReviewTests.release.xcconfig"; sourceTree = "<group>"; };
 		D935C46E7AA6BB6FACC1CBEC /* Pods-FlashcardReviewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashcardReviewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashcardReviewUITests/Pods-FlashcardReviewUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,21 +127,11 @@
 			isa = PBXGroup;
 			children = (
 				8120506E2033E75F00D205F3 /* LoginViewController.swift */,
-				812050702033E76A00D205F3 /* CategoriesViewController.swift */,
+				8177EBA42034FFC900D646CD /* CreateNewAccountViewController.swift */,
+				8177EBA6203500BF00D646CD /* CategoriesTableViewController.swift */,
 				812050722033E77C00D205F3 /* QuizViewController.swift */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		8120501D2032402800D205F3 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				812050742033E79100D205F3 /* LoginView.swift */,
-				812050762033E79C00D205F3 /* CreateAccountView.swift */,
-				812050782033E7B000D205F3 /* CategoriesView.swift */,
-				8120507A2033E7B900D205F3 /* QuizView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		8120501E2032402F00D205F3 /* Models */ = {
@@ -202,7 +186,6 @@
 				8120507E2033EAC200D205F3 /* CustomCells */,
 				8120501F2032405E00D205F3 /* Services */,
 				8120501E2032402F00D205F3 /* Models */,
-				8120501D2032402800D205F3 /* Views */,
 				8120501C2032401D00D205F3 /* View Controllers */,
 				8120501B2032401500D205F3 /* Supporting Files */,
 				814987D12032379E00259A16 /* Main.storyboard */,
@@ -545,16 +528,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				812050792033E7B000D205F3 /* CategoriesView.swift in Sources */,
-				812050752033E79100D205F3 /* LoginView.swift in Sources */,
-				8120507B2033E7B900D205F3 /* QuizView.swift in Sources */,
 				8120506F2033E75F00D205F3 /* LoginViewController.swift in Sources */,
+				8177EBA52034FFC900D646CD /* CreateNewAccountViewController.swift in Sources */,
 				812050732033E77C00D205F3 /* QuizViewController.swift in Sources */,
-				812050772033E79C00D205F3 /* CreateAccountView.swift in Sources */,
+				8177EBA7203500BF00D646CD /* CategoriesTableViewController.swift in Sources */,
 				812050802033EAE200D205F3 /* CategoryTableViewCell.swift in Sources */,
 				812050212032406F00D205F3 /* FirebaseAPIClient.swift in Sources */,
 				8120507D2033E7CE00D205F3 /* Stylesheet.swift in Sources */,
-				812050712033E76A00D205F3 /* CategoriesViewController.swift in Sources */,
 				814987CE2032379E00259A16 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
