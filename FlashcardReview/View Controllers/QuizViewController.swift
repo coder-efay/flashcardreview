@@ -10,6 +10,21 @@ import UIKit
 
 class QuizViewController: UIViewController {
 
+    @IBAction func cardTapped(_ sender: UITapGestureRecognizer) {
+        
+        print("card tapped")
+        
+        // TODO: Show Question
+        
+        // TODO: Flip to Show Answer
+        
+    }
+    
+    @IBAction func newCardButtonPressed(_ sender: UIButton) {
+        // TODO: Show next Question
+        print("Next Card button pressed")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

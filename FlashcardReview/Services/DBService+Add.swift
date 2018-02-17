@@ -14,7 +14,8 @@ extension DBService {
     /// CREATE A NEW USER
     public func addUser(user: User) {
         let ref = usersRef.child(user.userID)
-        ref.setValue(["email": user.email,
+        ref.setValue(["username": user.displayName,
+                      "email": user.email,
                       "userID": user.userID])
     }
     

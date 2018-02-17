@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
+    private var user: User?
+    
     @IBAction func signInButtonPressed(_ sender: UIButton) {
         
         let email = emailTextField.text!
@@ -34,6 +36,9 @@ class LoginViewController: UIViewController {
                 let presentedVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController
                 let navController = UINavigationController(rootViewController: presentedVC)
                 self.present(navController, animated: true, completion: nil)
+//               let categoriesTVC = CategoriesTableViewController()
+//                categoriesTVC.configureCategories(fromUser: self.user!)
+//                self.navigationController?.pushViewController(categoriesTVC, animated: true)
                 print("\(user) has logged in")
             }
         }
@@ -43,7 +48,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let user = user {
+            print("user email: \(user.email), user ID: \(user.userID)")
+        } else {
+            print("no current user")
+        }
         // Do any additional setup after loading the view.
     }
 

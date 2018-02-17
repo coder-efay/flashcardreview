@@ -24,18 +24,24 @@ class AuthUserService: NSObject {
     
     
     // Create account
-    func createNewAccount(with email: String, and password: String, completion: @escaping AuthResultCallback) {
-        Auth.auth().createUser(withEmail: email, password: password, completion: completion)
+    public func createNewAccount(with email: String, and password: String, completion: @escaping AuthResultCallback) {
+        auth.createUser(withEmail: email, password: password, completion: completion)
     }
     
     // Login to an account
-    func loginToAccount(with email: String, and password: String, completion: @escaping AuthResultCallback) {
-        Auth.auth().signIn(withEmail: email, password: password, completion: completion)
+    public func loginToAccount(with email: String, and password: String, completion: @escaping AuthResultCallback) {
+        auth.signIn(withEmail: email, password: password, completion: completion)
     }
     
-    
+    // Get current user
+//    public func getCurrentUser() -> User? {
+//        let user = Auth.auth().currentUser
+//        return user
+//    }
 
-    
+//    public func getCurrentUser() -> User? {
+//        return auth.currentUser
+//    }
     
     
     // Signs the current user out of the app and Firebase.
