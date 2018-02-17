@@ -31,9 +31,11 @@ class CategoriesTableViewController: UITableViewController {
             })
         }
         
-//        loadCategories(fromUID: (user?.userID)!)
+        //        loadCategories(fromUID: (user?.userID)!)
         
-        print("email: \(user?.email), userID: \(user?.userID)")
+        
+        // Print logged in user's info
+        print("CategoriesTVC -- email: \(user?.email), userID: \(user?.userID)")
         //        title = "\(user?.email)"
     }
     

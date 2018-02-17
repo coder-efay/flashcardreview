@@ -22,37 +22,38 @@ class LoginViewController: UIViewController {
         let pass = passwordTextfield.text!
         
         // Verify login credentials
-        AuthUserService.manager.loginToAccount(with: email, and: pass){(user, error) in
-            if let error = error {
-                //TO DO: Handle errors
-                // Create Alert
-                self.showAlert(title: "\(error.localizedDescription)", message: "")
-                print(error)
-                return
-            }
-            if let user = user {
-                // Navigate to next screen: Categories
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let presentedVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController
-                let navController = UINavigationController(rootViewController: presentedVC)
-                self.present(navController, animated: true, completion: nil)
-//               let categoriesTVC = CategoriesTableViewController()
-//                categoriesTVC.configureCategories(fromUser: self.user!)
-//                self.navigationController?.pushViewController(categoriesTVC, animated: true)
-                print("\(user) has logged in")
-            }
-        }
+        AuthUserService.manager.delegate = self
+        AuthUserService.manager.loginToAccount(withEmail: email, andPassword: pass)
+//            if let error = error {
+//                //TO DO: Handle errors
+//                // Create Alert
+//                print(error)
+//                return
+//            }
+//            if let user = user {
+////            if let user = AuthUserService.manager.getCurrentUser() {
+//
+//                // Navigate to next screen: Categories
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let presentedVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController
+//                let navController = UINavigationController(rootViewController: presentedVC)
+//                self.present(navController, animated: true, completion: nil)
+//                print("\(user.displayName) has logged in")
+//            }
+//        }
     }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let user = user {
-            print("user email: \(user.email), user ID: \(user.userID)")
-        } else {
-            print("no current user")
-        }
+        
+        // Check if there is already a logged in user
+//        if let user = user {
+//            print("user email: \(user.email), user ID: \(user.userID)")
+//        } else {
+//            print("no current user")
+//        }
         // Do any additional setup after loading the view.
     }
 
@@ -69,4 +70,22 @@ class LoginViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 
+}
+
+
+extension LoginViewController: AuthUserServiceDelegate {
+    func didFailLogin(_ authUserService: AuthUserService, error: Error) {
+        self.showAlert(title: "\(error.localizedDescription)", message: "")
+//        print("Login failed")
+    }
+    
+    func didLogin(_ authUserService: AuthUserService, userProfile: User) {
+        // Navigate to next screen: Categories
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let presentedVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController
+        let navController = UINavigationController(rootViewController: presentedVC)
+        present(navController, animated: true, completion: nil)
+//        print("User has logged in")
+    }
+    
 }
