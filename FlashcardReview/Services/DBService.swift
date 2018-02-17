@@ -14,7 +14,7 @@ class DBService: NSObject {
         self.rootRef = Database.database().reference()
         self.usersRef = self.rootRef.child("users")
         self.cardsRef = self.rootRef.child("cards")
-
+        self.categoriesRef = self.rootRef.child("categories")
         super.init()
     }
     
@@ -26,6 +26,7 @@ class DBService: NSObject {
     var rootRef: DatabaseReference!
     var usersRef: DatabaseReference!
     var cardsRef: DatabaseReference!
+    var categoriesRef: DatabaseReference!
 }
 
 
