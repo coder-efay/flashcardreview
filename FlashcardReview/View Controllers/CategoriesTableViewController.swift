@@ -10,11 +10,17 @@ import UIKit
 
 class CategoriesTableViewController: UITableViewController {
 
-    var categories = [Category]() {
-        didSet {
-            tableView.reloadData()
-        }
+    @IBAction func newCategoryBarButtonPressed(_ sender: UIBarButtonItem) {
+        showAlert()
     }
+    
+//    var categories = [Category]() {
+//        didSet {
+//            tableView.reloadData()
+//        }
+//    }
+    
+    var categories = ["ABC", "CDE", "FGH", "IJK", "LMN", "OPQ"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +40,34 @@ class CategoriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         let category = categories[indexPath.row]
-        cell.textLabel?.text = category.categoryName
+//        cell.textLabel?.text = category.categoryName
+        cell.textLabel?.text = category
         return cell
     }
+    
+    func showAlert() {
+        let alertController = UIAlertController(title: "Create A New Category", message: "", preferredStyle: .alert)
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { (action) in
+            let textField = alertController.textFields![0]
+            
+            // TODO: Take new category name and add to the Categories array
+            if textField.text != "" {
+                print("New Category:", textField.text!)
+                // add to Categories
+            } else {
+                return
+            }
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive) { (action) in }
+        alertController.addTextField { (textField: UITextField) in
+            textField.placeholder = "Enter New Category Name"
+            textField.autocorrectionType = .default
+            textField.keyboardType = .default
+            textField.clearButtonMode = .whileEditing
+        }
+        alertController.addAction(submitAction)
+        alertController.addAction(cancel)
+        present(alertController, animated: true, completion: nil)
+    }
+    
 }

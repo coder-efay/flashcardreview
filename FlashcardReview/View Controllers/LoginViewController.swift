@@ -15,17 +15,25 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextfield: UITextField!
     
     @IBAction func signInButtonPressed(_ sender: UIButton) {
-        //TO-DO: Validate email and password
+        
         let email = emailTextField.text!
         let pass = passwordTextfield.text!
-        FirebaseAPIClient.manager.loginToAccount(with: email, and: pass){(user, error) in
+        
+        // Verify login credentials
+        AuthUserService.manager.loginToAccount(with: email, and: pass){(user, error) in
             if let error = error {
                 //TO DO: Handle errors
+                // Create Alert
+                self.showAlert(title: "\(error.localizedDescription)", message: "")
                 print(error)
                 return
             }
             if let user = user {
-                //TO DO: Navigate to next screen
+                // Navigate to next screen: Categories
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let presentedVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController
+                let navController = UINavigationController(rootViewController: presentedVC)
+                self.present(navController, animated: true, completion: nil)
                 print("\(user) has logged in")
             }
         }
@@ -45,14 +53,11 @@ class LoginViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { alert in }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
-    */
 
 }

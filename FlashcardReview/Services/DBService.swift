@@ -13,8 +13,8 @@ class DBService: NSObject {
     private override init() {
         self.rootRef = Database.database().reference()
         self.usersRef = self.rootRef.child("users")
-//        self.cardsRef = self.rootRef.child("cards")
-//        self.categoriesRef = self.rootRef.child("categories")
+        self.cardsRef = self.rootRef.child("cards")
+
         super.init()
     }
     
@@ -25,19 +25,8 @@ class DBService: NSObject {
     
     var rootRef: DatabaseReference!
     var usersRef: DatabaseReference!
-//    var cardsRef: DatabaseReference!
-//    var categoriesRef: DatabaseReference!
+    var cardsRef: DatabaseReference!
 }
 
 
-extension DBService {
-    public func addUser(user: User) {
-        let ref = usersRef.child(user.userID)
-        
-        ref.setValue(["displayName": user.displayName,
-                      "email": user.email,
-                      "userID": user.userID])
-        
-    }
-    
-}
+

@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseAuth
 
-struct Cards {
+struct Card {
     let question: String
     let answer: String
     let correct: Bool
