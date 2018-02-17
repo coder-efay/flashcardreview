@@ -14,4 +14,5 @@ struct Card {
     let answer: String
     let correct: Bool
     let category: String
+    let userID: String
 }

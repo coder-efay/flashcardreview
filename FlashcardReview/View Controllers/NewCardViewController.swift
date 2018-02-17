@@ -10,37 +10,43 @@ import UIKit
 
 class NewCardViewController: UIViewController {
     
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBOutlet weak var questionTextView: UITextView!
     @IBOutlet weak var answerTextView: UITextView!
     @IBOutlet weak var newCategoryTextField: UITextField!
     @IBOutlet weak var categoryPickerView: UIPickerView!
     
     @IBAction func createCardButtonPressed(_ sender: UIButton) {
+        print("createCardButtonPressed")
         
         // TODO: Save all fields as Card
         
+        // TODO: Dismiss the view if save successful
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    // powered by array of existing Categories
+    var categories = [Category]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension NewCardViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
-    */
-
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categories.count
+    }
+    
+    
+    
 }

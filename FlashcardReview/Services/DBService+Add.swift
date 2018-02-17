@@ -10,20 +10,30 @@ import Foundation
 import FirebaseDatabase
 
 extension DBService {
+    /// CREATE A USER
     public func addUser(user: User) {
         let ref = usersRef.child(user.userID)
-        
         ref.setValue(["email": user.email,
                       "userID": user.userID])
     }
     
-    public func addCard(card: Card) {
-        
-        let ref = cardsRef.child(card.question)
+    /// CREATE A CATEGORY
+    public func addCategory(withCategory category: String) {
+        let ref = cardsRef.child(category)
+        let category = Category(categoryName: category)
+        ref.setValue(["category": category.categoryName])
+    }
+    
+    /// CREATE A CARD
+    public func addCard(withQuestion question: String, answer: String, correct: Bool, category: String, userID: String) {
+        let ref = cardsRef.childByAutoId()
+        let card = Card(question: question, answer: answer, correct: correct, category: category, userID: ref.key)
         
         ref.setValue(["question": card.question,
                       "answer": card.answer,
                       "correct": card.correct,
-                      "category": card.category])
+                      "category": card.category,
+                      "userID": card.userID])
     }
+    
 }

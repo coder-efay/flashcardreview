@@ -51,12 +51,13 @@ class CategoriesTableViewController: UITableViewController {
             let textField = alertController.textFields![0]
             
             // TODO: Take new category name and add to the Categories array
-            if textField.text != "" {
+            if let newCategory = textField.text, textField.text != "" {
+                DBService.manager.addCategory(withCategory: newCategory)
                 print("New Category:", textField.text!)
-                // add to Categories
             } else {
                 return
             }
+            
         }
         let cancel = UIAlertAction(title: "Cancel", style: .destructive) { (action) in }
         alertController.addTextField { (textField: UITextField) in
