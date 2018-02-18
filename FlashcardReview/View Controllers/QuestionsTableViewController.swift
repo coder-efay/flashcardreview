@@ -41,7 +41,7 @@ class QuestionsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath)
         let card = questions[indexPath.row]
         cell.textLabel?.text = card.question
-        cell.textLabel?.text = card.answer
+        cell.detailTextLabel?.text = card.answer
         return cell
     }
 
@@ -59,6 +59,7 @@ class QuestionsTableViewController: UITableViewController {
                 guard let destination = segue.destination as? NewCardViewController else { return }
                 let selectedCategory = category
                 destination.category = selectedCategory
+//                destination.categoryLabel.text = selectedCategory
             default:
                 break
             }

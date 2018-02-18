@@ -12,8 +12,10 @@ class NewCardViewController: UIViewController {
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+        print("Cancel addCard")
     }
     
+    @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var questionTextView: UITextView!
     @IBOutlet weak var answerTextView: UITextView!
 
@@ -28,17 +30,30 @@ class NewCardViewController: UIViewController {
     @objc private func post() {
         if let ques = questionTextView.text, !ques.isEmpty {
             if let ans = answerTextView.text, !ans.isEmpty {
-                guard let thisCategory = category else { return }
+                guard let thisCategory = category else { print("31 card not added"); return }
                 DBService.manager.addCard(withQuestion: ques, answer: ans, correct: false, category: thisCategory)
                 print("new card added -- Question: \(ques), Answer: \(ans), Category: \(thisCategory)")
                 // TODO: Dismiss the view if save successful
                 self.dismiss(animated: true, completion: nil)
             }
-        } else { return }
+        } else {
+            showAlert(title: "Question and Answer Incomplete", message: "Try again")
+            print("37 card not added")
+            return
+            
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.categoryLabel.text = "Add Card to \(category ?? "")"
     }
     
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { alert in }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
 }

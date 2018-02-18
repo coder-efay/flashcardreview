@@ -137,7 +137,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Categories" id="60A-Ut-acD">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="W2N-6X-HjQ">
+                        <barButtonItem key="rightBarButtonItem" title="New Category" id="W2N-6X-HjQ">
                             <connections>
                                 <action selector="newCategoryBarButtonPressed:" destination="wfR-iw-DUK" id="RJQ-WW-Zdk"/>
                             </connections>
@@ -386,41 +386,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSm-ey-jHP">
-                                <rect key="frame" x="146" y="607" width="83" height="30"/>
-                                <state key="normal" title="Create Card"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJ7-0q-CUu">
+                                <rect key="frame" x="15" y="35" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <action selector="createCardButtonPressed:" destination="Tfg-P7-1LZ" eventType="touchUpInside" id="DJI-wj-TSG"/>
+                                    <action selector="cancelButtonPressed:" destination="Tfg-P7-1LZ" eventType="touchUpInside" id="1dn-pI-WyC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJl-Th-Mw9">
+                                <rect key="frame" x="9" y="69.5" width="356.5" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.5" id="ovk-PA-1o8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JOz-0W-aNE">
-                                <rect key="frame" x="0.0" y="70" width="375" height="527"/>
+                                <rect key="frame" x="0.0" y="95.5" width="375" height="501.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrC-HJ-vlz">
-                                        <rect key="frame" x="10" y="0.0" width="355" height="20.5"/>
+                                        <rect key="frame" x="10" y="0.0" width="355" height="19.5"/>
                                         <color key="backgroundColor" red="1" green="0.5302794931" blue="0.57964875569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALQ-vv-agd">
-                                        <rect key="frame" x="10" y="25.5" width="355" height="235.5"/>
+                                        <rect key="frame" x="10" y="24.5" width="355" height="223"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azi-BJ-BPO">
-                                        <rect key="frame" x="10" y="266" width="355" height="20.5"/>
+                                        <rect key="frame" x="10" y="252.5" width="355" height="21.5"/>
                                         <color key="backgroundColor" red="1" green="0.5302794931" blue="0.57964875569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1G-9f-pSn">
-                                        <rect key="frame" x="10" y="291.5" width="355" height="235.5"/>
+                                        <rect key="frame" x="10" y="279" width="355" height="222.5"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                     </textView>
                                 </subviews>
                                 <constraints>
@@ -435,22 +448,28 @@
                                     <constraint firstItem="Azi-BJ-BPO" firstAttribute="leading" secondItem="JOz-0W-aNE" secondAttribute="leading" constant="10" id="tp3-L4-wl3"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJ7-0q-CUu">
-                                <rect key="frame" x="15" y="35" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSm-ey-jHP">
+                                <rect key="frame" x="146" y="607" width="83" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="EXz-KJ-csH"/>
+                                </constraints>
+                                <state key="normal" title="Create Card"/>
                                 <connections>
-                                    <action selector="cancelButtonPressed:" destination="Tfg-P7-1LZ" eventType="touchUpInside" id="1dn-pI-WyC"/>
+                                    <action selector="createCardButtonPressed:" destination="Tfg-P7-1LZ" eventType="touchUpInside" id="DJI-wj-TSG"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JOz-0W-aNE" firstAttribute="top" secondItem="uJ7-0q-CUu" secondAttribute="bottom" constant="5" id="1ha-3S-ea8"/>
                             <constraint firstItem="uJ7-0q-CUu" firstAttribute="leading" secondItem="FCQ-QN-M6R" secondAttribute="leading" constant="15" id="1ta-Q4-O3x"/>
+                            <constraint firstItem="sJl-Th-Mw9" firstAttribute="width" secondItem="BkC-K1-Res" secondAttribute="width" multiplier="0.95" id="8Qj-bM-od8"/>
                             <constraint firstItem="JOz-0W-aNE" firstAttribute="leading" secondItem="FCQ-QN-M6R" secondAttribute="leading" id="B4B-UZ-ldm"/>
+                            <constraint firstItem="sJl-Th-Mw9" firstAttribute="top" secondItem="uJ7-0q-CUu" secondAttribute="bottom" constant="5" id="JkH-UA-QjB"/>
                             <constraint firstItem="uJ7-0q-CUu" firstAttribute="top" secondItem="FCQ-QN-M6R" secondAttribute="top" constant="15" id="Ouk-X8-XDZ"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uJ7-0q-CUu" secondAttribute="trailing" constant="20" symbolic="YES" id="UEN-e7-rfO"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uJ7-0q-CUu" secondAttribute="trailing" constant="20" symbolic="YES" id="Sl0-iC-IRP"/>
+                            <constraint firstItem="JOz-0W-aNE" firstAttribute="top" secondItem="sJl-Th-Mw9" secondAttribute="bottom" constant="5" id="cv6-Fc-lVV"/>
                             <constraint firstItem="rSm-ey-jHP" firstAttribute="centerX" secondItem="BkC-K1-Res" secondAttribute="centerX" id="ddY-XS-PvX"/>
+                            <constraint firstItem="sJl-Th-Mw9" firstAttribute="centerX" secondItem="FCQ-QN-M6R" secondAttribute="centerX" id="jO4-Ph-kHM"/>
                             <constraint firstItem="FCQ-QN-M6R" firstAttribute="trailing" secondItem="JOz-0W-aNE" secondAttribute="trailing" id="laB-t6-J16"/>
                             <constraint firstItem="rSm-ey-jHP" firstAttribute="top" secondItem="JOz-0W-aNE" secondAttribute="bottom" constant="10" id="v9r-zo-wjj"/>
                             <constraint firstItem="FCQ-QN-M6R" firstAttribute="bottom" secondItem="rSm-ey-jHP" secondAttribute="bottom" constant="30" id="ytG-0o-uit"/>
@@ -459,6 +478,7 @@
                     </view>
                     <connections>
                         <outlet property="answerTextView" destination="N1G-9f-pSn" id="mr0-7X-DsV"/>
+                        <outlet property="categoryLabel" destination="sJl-Th-Mw9" id="AM5-hB-0me"/>
                         <outlet property="questionTextView" destination="ALQ-vv-agd" id="KNT-dK-9bH"/>
                     </connections>
                 </viewController>
