@@ -29,6 +29,8 @@
 		8177EBB92036562000D646CD /* NewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBB82036562000D646CD /* NewCardViewController.swift */; };
 		8177EBBD2038765E00D646CD /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBBC2038765E00D646CD /* QuestionsTableViewController.swift */; };
 		8177EBBF2038D7E500D646CD /* AuthUserServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBBE2038D7E500D646CD /* AuthUserServiceDelegate.swift */; };
+		8177EBC2203A1D2700D646CD /* QuizCardViewFront.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBC1203A1D2700D646CD /* QuizCardViewFront.swift */; };
+		8177EBC4203A1FCE00D646CD /* QuizCardViewBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBC3203A1FCE00D646CD /* QuizCardViewBack.swift */; };
 		8C2B3AEF7576C415ECCCF6C5 /* Pods_FlashcardReviewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 768AE29B388BFE528AC0A2D4 /* Pods_FlashcardReviewTests.framework */; };
 		9580F630438FEF9D2F461ECF /* Pods_FlashcardReviewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6C5C23B6ED92392669CED9 /* Pods_FlashcardReviewUITests.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +85,8 @@
 		8177EBB82036562000D646CD /* NewCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardViewController.swift; sourceTree = "<group>"; };
 		8177EBBC2038765E00D646CD /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		8177EBBE2038D7E500D646CD /* AuthUserServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserServiceDelegate.swift; sourceTree = "<group>"; };
+		8177EBC1203A1D2700D646CD /* QuizCardViewFront.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCardViewFront.swift; sourceTree = "<group>"; };
+		8177EBC3203A1FCE00D646CD /* QuizCardViewBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCardViewBack.swift; sourceTree = "<group>"; };
 		8E6C5C23B6ED92392669CED9 /* Pods_FlashcardReviewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashcardReviewUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F1022D12223D6493F7671C /* Pods-FlashcardReviewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashcardReviewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashcardReviewTests/Pods-FlashcardReviewTests.release.xcconfig"; sourceTree = "<group>"; };
 		D935C46E7AA6BB6FACC1CBEC /* Pods-FlashcardReviewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashcardReviewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashcardReviewUITests/Pods-FlashcardReviewUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				8120501F2032405E00D205F3 /* Services */,
 				8120501E2032402F00D205F3 /* Models */,
 				8120501C2032401D00D205F3 /* View Controllers */,
+				8177EBC0203A1D0900D646CD /* Views */,
 				8120501B2032401500D205F3 /* Supporting Files */,
 				814987D12032379E00259A16 /* Main.storyboard */,
 				814987D92032379E00259A16 /* Info.plist */,
@@ -232,6 +237,15 @@
 				814987EF2032379E00259A16 /* Info.plist */,
 			);
 			path = FlashcardReviewUITests;
+			sourceTree = "<group>";
+		};
+		8177EBC0203A1D0900D646CD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8177EBC1203A1D2700D646CD /* QuizCardViewFront.swift */,
+				8177EBC3203A1FCE00D646CD /* QuizCardViewBack.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9FF91971379C80A0856512D3 /* Pods */ = {
@@ -560,7 +574,9 @@
 				8177EBB320364FAA00D646CD /* DBService+Get.swift in Sources */,
 				8177EBAF20350DF300D646CD /* Card.swift in Sources */,
 				814987CE2032379E00259A16 /* AppDelegate.swift in Sources */,
+				8177EBC2203A1D2700D646CD /* QuizCardViewFront.swift in Sources */,
 				8177EBB520364FC400D646CD /* DBService+Add.swift in Sources */,
+				8177EBC4203A1FCE00D646CD /* QuizCardViewBack.swift in Sources */,
 				8177EBB1203648D100D646CD /* AuthUserService.swift in Sources */,
 				8177EBA92035073400D646CD /* AppUser.swift in Sources */,
 				8177EBB7203654A300D646CD /* Category.swift in Sources */,

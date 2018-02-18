@@ -10,31 +10,46 @@ import UIKit
 
 class QuizViewController: UIViewController {
 
+    @IBOutlet weak var cardView: UIView!
+//        var cardView: UIView!
+    var front: UIView!
+    var back: UIView!
+    var showingFront = true
+    
     @IBAction func cardTapped(_ sender: UITapGestureRecognizer) {
         
         print("card tapped")
         
         // TODO: Show Question
-        
-        // TODO: Flip to Show Answer
-        
+        if (showingFront) {
+            UIView.transition(from: front, to: back, duration: 1, options: UIViewAnimationOptions.transitionFlipFromRight, completion: nil)
+            showingFront = false
+        } else {
+            // TODO: Flip to Show Answer
+            UIView.transition(from: back, to: front, duration: 1, options: UIViewAnimationOptions.transitionFlipFromLeft, completion: nil)
+            showingFront = true
+        }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        cardView.backgroundColor = .red
+        
+        front = QuizCardViewFront()
+        back = QuizCardViewBack()
+        self.cardView.addSubview(front)
+        view.addSubview(cardView)
+    }
+
     
     @IBAction func newCardButtonPressed(_ sender: UIButton) {
         // TODO: Show next Question
         print("Next Card button pressed")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
     
 
     /*

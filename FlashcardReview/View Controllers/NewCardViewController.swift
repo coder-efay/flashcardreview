@@ -30,7 +30,7 @@ class NewCardViewController: UIViewController {
     @objc private func post() {
         if let ques = questionTextView.text, !ques.isEmpty {
             if let ans = answerTextView.text, !ans.isEmpty {
-                guard let thisCategory = category else { print("31 card not added"); return }
+                guard let thisCategory = category else { return }
                 DBService.manager.addCard(withQuestion: ques, answer: ans, correct: false, category: thisCategory)
                 print("new card added -- Question: \(ques), Answer: \(ans), Category: \(thisCategory)")
                 // TODO: Dismiss the view if save successful
@@ -38,7 +38,7 @@ class NewCardViewController: UIViewController {
             }
         } else {
             showAlert(title: "Question and Answer Incomplete", message: "Try again")
-            print("37 card not added")
+            print("card not added")
             return
             
         }

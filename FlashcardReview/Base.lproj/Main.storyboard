@@ -214,22 +214,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wi9-nI-Zoj">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wi9-nI-Zoj" customClass="QuizCardViewFront" customModule="FlashcardReview" customModuleProvider="target">
                                 <rect key="frame" x="37.5" y="94" width="300" height="333.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question or Answer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYE-oD-2tf">
-                                        <rect key="frame" x="71.5" y="156" width="157" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.5302794931" blue="0.57964875569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstItem="nYE-oD-2tf" firstAttribute="centerY" secondItem="Wi9-nI-Zoj" secondAttribute="centerY" id="Fh2-xL-Qpm"/>
-                                    <constraint firstItem="nYE-oD-2tf" firstAttribute="centerX" secondItem="Wi9-nI-Zoj" secondAttribute="centerX" id="xQG-eJ-vlm"/>
-                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="8sT-ht-Xnj" appends="YES" id="7Nu-44-LKg"/>
                                 </connections>
@@ -253,6 +241,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MlU-OV-o7J"/>
                     </view>
+                    <connections>
+                        <outlet property="cardView" destination="Wi9-nI-Zoj" id="nqk-bE-0zS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2u-1e-ZUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="8sT-ht-Xnj">
