@@ -70,6 +70,7 @@ class CategoriesTableViewController: UITableViewController {
             textField.autocorrectionType = .default
             textField.keyboardType = .default
             textField.clearButtonMode = .whileEditing
+            textField.autocapitalizationType = .words
         }
         alertController.addAction(submitAction)
         alertController.addAction(cancel)

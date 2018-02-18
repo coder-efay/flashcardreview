@@ -40,8 +40,8 @@ class QuestionsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath)
         let card = questions[indexPath.row]
-        cell.textLabel?.text = card.question
-        cell.detailTextLabel?.text = card.answer
+        cell.textLabel?.text = "Q: \(card.question)"
+        cell.detailTextLabel?.text = "A: \(card.answer)"
         return cell
     }
 
