@@ -38,11 +38,19 @@ extension DBService {
     }
     
     
+    public func getCardsFromCategory(fromUserID uid: String, category: String, completion: @escaping (_ cards: [Card]) -> Void) {
+        getAllCards { (cards) in
+            let cardsFromCat = cards.filter{$0.userID == uid}.filter{$0.category == category}
+            completion(cardsFromCat)
+        }
+    }
+    
+    
     
     public func getCategoriesFromCards(fromUserID uid: String, category: String, completion: @escaping (_ cards: [Card]) -> Void) {
         getCurrentUsersCards(fromUserID: uid) { (cards) in
-            let userCardsSorted = cards.filter{$0.category == category}
-            completion(userCardsSorted)
+            let userCategories = cards.filter{$0.category == category}
+            completion(userCategories)
         }
     }
     

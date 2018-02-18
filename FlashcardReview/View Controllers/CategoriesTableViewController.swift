@@ -41,6 +41,7 @@ class CategoriesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         let category = categories[indexPath.row]
         cell.textLabel?.text = category.categoryName
+        cell.detailTextLabel?.text = "# questions"
         return cell
     }
 
