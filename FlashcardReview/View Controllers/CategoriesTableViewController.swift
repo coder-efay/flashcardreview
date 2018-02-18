@@ -79,4 +79,20 @@ extension CategoriesTableViewController {
         let navController = UINavigationController(rootViewController: presentedVC)
         return navController
     }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier {
+            switch id {
+            case "CategoryToCards":
+                guard let destination = segue.destination as? QuestionsTableViewController else { return }
+                let selectedCategory = categories[tableView.indexPathForSelectedRow!.row]
+                destination.category = selectedCategory.categoryName
+            default:
+                break
+            }
+        }
+    }
 }
