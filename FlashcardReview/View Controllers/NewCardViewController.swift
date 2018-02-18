@@ -15,38 +15,34 @@ class NewCardViewController: UIViewController {
     }
     @IBOutlet weak var questionTextView: UITextView!
     @IBOutlet weak var answerTextView: UITextView!
-    @IBOutlet weak var newCategoryTextField: UITextField!
-    @IBOutlet weak var categoryPickerView: UIPickerView!
+
+    let currentUser = AuthUserService.manager.getCurrentUser()
     
     @IBAction func createCardButtonPressed(_ sender: UIButton) {
         print("createCardButtonPressed")
         
+//        let ques = questionTextView.text!
+//        let ans = answerTextView.text!
+
         // TODO: Save all fields as Card
-        
-        // TODO: Dismiss the view if save successful
-        self.dismiss(animated: true, completion: nil)
+
     }
     
-    // powered by array of existing Categories
-    var categories = [Category]()
     
     
+    @objc private func post() {
+        if let ques = questionTextView.text, !ques.isEmpty {
+            if let ans = answerTextView.text, !ans.isEmpty {
+                DBService.manager.addCard(withQuestion: ques, answer: ans, correct: false)
+                print("new card added")
+                // TODO: Dismiss the view if save successful
+                self.dismiss(animated: true, completion: nil)
+            }
+        } else { return }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-}
-
-
-extension NewCardViewController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return categories.count
-    }
-    
-    
     
 }

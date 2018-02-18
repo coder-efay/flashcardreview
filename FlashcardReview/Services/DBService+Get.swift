@@ -20,7 +20,6 @@ extension DBService {
     public func getAllCategories(completion: @escaping (_ categories: [Category]) -> Void) {
         categoriesRef.observe(.value) { (dataSnapshot) in
             var categories: [Category] = []
-            //            let value = snapshot.value as? NSDictionary
             guard let categorySnapshots = dataSnapshot.children.allObjects as? [DataSnapshot] else { return }
             for categorySnapshot in categorySnapshots {
                 guard let categoryDict = categorySnapshot.value as? [String: Any] else { return }
@@ -39,8 +38,23 @@ extension DBService {
     }
     
     
+    
+    public func getCategoriesFromCards(fromUserID uid: String, category: String, completion: @escaping (_ cards: [Card]) -> Void) {
+        getCurrentUsersCards(fromUserID: uid) { (cards) in
+            let userCardsSorted = cards.filter{$0.category == category}
+            completion(userCardsSorted)
+        }
+    }
+    
+    public func getCurrentUsersCards(fromUserID uid: String, completion: @escaping (_ cards: [Card]) -> Void) {
+        getAllCards { (cards) in
+            let userCards = cards.filter{$0.userID == uid}
+            completion(userCards)
+        }
+    }
+    
     public func getAllCards(completion: @escaping (_ cards: [Card]) -> Void) {
-        cardsRef.observeSingleEvent(of: .value) { (dataSnapshot) in
+        cardsRef.observe(.value) { (dataSnapshot) in
             var cards: [Card] = []
             guard let cardSnapshots = dataSnapshot.children.allObjects as? [DataSnapshot] else { return }
             for cardSnapshot in cardSnapshots {
