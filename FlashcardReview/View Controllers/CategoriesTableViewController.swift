@@ -40,8 +40,14 @@ class CategoriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         let category = categories[indexPath.row]
+        let currentUser = AuthUserService.manager.getCurrentUser()
+        DBService.manager.getCardsFromCategory(fromUserID: (currentUser?.uid)!, category: categories[indexPath.row].categoryName) { (cards) in
+            var cardsPerCategory: Int
+            cardsPerCategory = cards.count
+            cell.detailTextLabel?.text = "\(cardsPerCategory) questions"
+        }
         cell.textLabel?.text = category.categoryName
-        cell.detailTextLabel?.text = "# questions"
+        
         return cell
     }
 
