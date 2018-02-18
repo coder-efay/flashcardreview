@@ -11,4 +11,5 @@ import FirebaseAuth
 
 struct Category {
     let categoryName: String
+    let userID: String
 }

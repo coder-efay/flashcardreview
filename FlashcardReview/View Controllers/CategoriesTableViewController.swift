@@ -7,50 +7,33 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class CategoriesTableViewController: UITableViewController {
-    
-    private var user: User?
     
     @IBAction func newCategoryBarButtonPressed(_ sender: UIBarButtonItem) {
         showAlert()
     }
     
-    var categories = [Category]() {
+    var categories: [Category] = [] {
         didSet {
             tableView.reloadData()
+            print("current categories: \(categories)")
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let user = user {
-            DBService.manager.getAllCategories(fromUserID: user.userID, completion: { (myCategories) in
-                self.categories = myCategories
-            })
-        }
-        
-        //        loadCategories(fromUID: (user?.userID)!)
-        
-        
-        // Print logged in user's info
-        print("CategoriesTVC -- email: \(user?.email), userID: \(user?.userID)")
-        //        title = "\(user?.email)"
-    }
-    
-    public func loadCategories(fromUID uid: String) {
-        DBService.manager.getAllCategories(fromUserID: (user?.userID)!) { (categories) in
-            self.categories = categories
+        let currentUser = AuthUserService.manager.getCurrentUser()
+        DBService.manager.getCurrentUsersCategories(fromUserID: (currentUser?.uid)!) { (userCategories) in
+            self.categories = userCategories
         }
     }
     
-    public func configureCategories(fromUser: User) {
-        self.user = fromUser
-        
-        loadCategories(fromUID: fromUser.userID)
-    }
-    
+//    override func viewDidAppear(_ animated: Bool) {
+//        <#code#>
+//    }
     
     // MARK: - Table view data source
     

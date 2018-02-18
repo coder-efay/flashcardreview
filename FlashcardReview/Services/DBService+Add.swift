@@ -12,7 +12,7 @@ import FirebaseDatabase
 extension DBService {
     
     /// CREATE A NEW USER
-    public func addUser(user: User) {
+    public func addUser(user: AppUser) {
         let ref = usersRef.child(user.userID)
         ref.setValue(["username": user.displayName,
                       "email": user.email,
@@ -22,14 +22,17 @@ extension DBService {
     /// CREATE A NEW CATEGORY
     public func addCategory(withCategory category: String) {
         let ref = categoriesRef.childByAutoId()
-        let category = Category(categoryName: category)
-        ref.setValue(["category": category.categoryName])
+        let currentUser = AuthUserService.manager.getCurrentUser()
+        let category = Category(categoryName: category, userID: (currentUser?.uid)!)
+        ref.setValue(["category": category.categoryName,
+                      "userID": category.userID])
     }
     
     /// CREATE A NEW CARD
     public func addCard(withQuestion question: String, answer: String, correct: Bool, category: String, userID: String) {
         let ref = cardsRef.childByAutoId()
-        let card = Card(question: question, answer: answer, correct: correct, category: category, userID: ref.key)
+        let currentUser = AuthUserService.manager.getCurrentUser()
+        let card = Card(question: question, answer: answer, correct: correct, category: category, userID: (currentUser?.uid)!)
         
         ref.setValue(["question": card.question,
                       "answer": card.answer,

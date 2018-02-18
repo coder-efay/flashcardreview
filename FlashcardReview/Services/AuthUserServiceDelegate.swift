@@ -12,7 +12,7 @@ import Firebase
 @objc protocol AuthUserServiceDelegate: class {
     
     
-    @objc optional func didLogin(_ authUserService: AuthUserService, userProfile: User)
+    @objc optional func didLogin(_ authUserService: AuthUserService, userProfile: AppUser)
     
     @objc optional func didFailLogin(_ authUserService: AuthUserService, error: Error)
     

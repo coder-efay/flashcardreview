@@ -46,15 +46,10 @@ class AuthUserService: NSObject {
     }
     
     
-    // Get current user
-    //    public func getCurrentUser() -> User? {
-    //        let user = Auth.auth().currentUser
-    //        return user
-    //    }
-    
-    //    public func getCurrentUser() -> User? {
-    //        return auth.currentUser
-    //    }
+//     Get current user
+        public func getCurrentUser() -> User? {
+            return auth.currentUser
+        }
     
     
     // Signs the current user out of the app and Firebase.

@@ -10,14 +10,31 @@ import FirebaseDatabase
 
 extension DBService {
     
-    public func getAllCategories(fromUserID userID: String, completion: @escaping (_ categories: [Category]) -> Void) {
-        categoriesRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            let categoryName = value?["category"] as? String ?? ""
-            let category = Category(categoryName: categoryName)
-        })
-        { (error) in
-            print(error.localizedDescription)
+    public func getCurrentUsersCategories(fromUserID uid: String, completion: @escaping (_ categories: [Category]) -> Void) {
+        getAllCategories { (categories) in
+            let userCategories = categories.filter{$0.userID == uid}
+            completion(userCategories)
+        }
+    }
+    
+    public func getAllCategories(completion: @escaping (_ categories: [Category]) -> Void) {
+        categoriesRef.observe(.value) { (dataSnapshot) in
+            var categories: [Category] = []
+            //            let value = snapshot.value as? NSDictionary
+            guard let categorySnapshots = dataSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for categorySnapshot in categorySnapshots {
+                guard let categoryDict = categorySnapshot.value as? [String: Any] else { return }
+                guard
+                    let categoryName = categoryDict["category"] as? String,
+                    let userID = categoryDict["userID"] as? String
+                    else {
+                        print("couldn't get categories")
+                        return
+                }
+                let category = Category(categoryName: categoryName, userID: userID)
+                categories.append(category)
+            }
+            completion(categories)
         }
     }
     
@@ -47,12 +64,12 @@ extension DBService {
         
     
     
-    public func getUserProfile(withUID uid: String, completion: @escaping (_ user: User) -> Void) {
+    public func getUserProfile(withUID uid: String, completion: @escaping (_ user: AppUser) -> Void) {
         let ref = usersRef.child(uid)
         ref.observe(.value) { (dataSnapshot) in
             guard let email = dataSnapshot.childSnapshot(forPath: "email").value as? String else { return }
             guard let username = dataSnapshot.childSnapshot(forPath: "username").value as? String else { return }
-            let currentUser = User(email: email, userID: uid, displayName: username)
+            let currentUser = AppUser(email: email, userID: uid, displayName: username)
             completion(currentUser)
         }
     }

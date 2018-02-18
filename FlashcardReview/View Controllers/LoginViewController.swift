@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
-    private var user: User?
+    private var user: AppUser?
     
     @IBAction func signInButtonPressed(_ sender: UIButton) {
         
@@ -79,7 +79,7 @@ extension LoginViewController: AuthUserServiceDelegate {
 //        print("Login failed")
     }
     
-    func didLogin(_ authUserService: AuthUserService, userProfile: User) {
+    func didLogin(_ authUserService: AuthUserService, userProfile: AppUser) {
         // Navigate to next screen: Categories
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let presentedVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController

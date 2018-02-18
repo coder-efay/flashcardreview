@@ -19,7 +19,7 @@
 		814987FC203237EB00259A16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 814987FB203237EB00259A16 /* GoogleService-Info.plist */; };
 		8177EBA52034FFC900D646CD /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBA42034FFC900D646CD /* CreateNewAccountViewController.swift */; };
 		8177EBA7203500BF00D646CD /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBA6203500BF00D646CD /* CategoriesTableViewController.swift */; };
-		8177EBA92035073400D646CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBA82035073400D646CD /* User.swift */; };
+		8177EBA92035073400D646CD /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBA82035073400D646CD /* AppUser.swift */; };
 		8177EBAB2035096A00D646CD /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBAA2035096A00D646CD /* DBService.swift */; };
 		8177EBAF20350DF300D646CD /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBAE20350DF300D646CD /* Card.swift */; };
 		8177EBB1203648D100D646CD /* AuthUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBB0203648D100D646CD /* AuthUserService.swift */; };
@@ -73,7 +73,7 @@
 		814987FB203237EB00259A16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8177EBA42034FFC900D646CD /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewController.swift; sourceTree = "<group>"; };
 		8177EBA6203500BF00D646CD /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
-		8177EBA82035073400D646CD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8177EBA82035073400D646CD /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		8177EBAA2035096A00D646CD /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		8177EBAE20350DF300D646CD /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		8177EBB0203648D100D646CD /* AuthUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserService.swift; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 		8120501E2032402F00D205F3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8177EBA82035073400D646CD /* User.swift */,
+				8177EBA82035073400D646CD /* AppUser.swift */,
 				8177EBAE20350DF300D646CD /* Card.swift */,
 				8177EBB6203654A300D646CD /* Category.swift */,
 			);
@@ -562,7 +562,7 @@
 				814987CE2032379E00259A16 /* AppDelegate.swift in Sources */,
 				8177EBB520364FC400D646CD /* DBService+Add.swift in Sources */,
 				8177EBB1203648D100D646CD /* AuthUserService.swift in Sources */,
-				8177EBA92035073400D646CD /* User.swift in Sources */,
+				8177EBA92035073400D646CD /* AppUser.swift in Sources */,
 				8177EBB7203654A300D646CD /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

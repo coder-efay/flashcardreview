@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseAuth
 
-class User: NSObject {
+class AppUser: NSObject {
     let email: String
     let userID: String
     var displayName: String
