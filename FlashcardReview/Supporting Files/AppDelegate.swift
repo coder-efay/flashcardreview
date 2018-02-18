@@ -19,7 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         -> Bool {
             
             FirebaseApp.configure()
-                        
+            
+            
+            if let _ = AuthUserService.manager.getCurrentUser() {
+                window = UIWindow(frame: UIScreen.main.bounds)
+                window?.rootViewController = CategoriesTableViewController.storyboardInstance()
+                window?.makeKeyAndVisible()
+            } else {
+                window = UIWindow(frame: UIScreen.main.bounds)
+                window?.rootViewController = LoginViewController.storyboardInstance()
+                window?.makeKeyAndVisible()
+            }
+            
+            
             return true
     }
 

@@ -24,37 +24,12 @@ class LoginViewController: UIViewController {
         // Verify login credentials
         AuthUserService.manager.delegate = self
         AuthUserService.manager.loginToAccount(withEmail: email, andPassword: pass)
-//            if let error = error {
-//                //TO DO: Handle errors
-//                // Create Alert
-//                print(error)
-//                return
-//            }
-//            if let user = user {
-////            if let user = AuthUserService.manager.getCurrentUser() {
-//
-//                // Navigate to next screen: Categories
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let presentedVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController
-//                let navController = UINavigationController(rootViewController: presentedVC)
-//                self.present(navController, animated: true, completion: nil)
-//                print("\(user.displayName) has logged in")
-//            }
-//        }
+        
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Check if there is already a logged in user
-//        if let user = user {
-//            print("user email: \(user.email), user ID: \(user.userID)")
-//        } else {
-//            print("no current user")
-//        }
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,7 +44,12 @@ class LoginViewController: UIViewController {
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
     }
-
+    
+    public static func storyboardInstance() -> LoginViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let presentedVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        return presentedVC
+    }
 }
 
 
@@ -89,3 +69,4 @@ extension LoginViewController: AuthUserServiceDelegate {
     }
     
 }
+

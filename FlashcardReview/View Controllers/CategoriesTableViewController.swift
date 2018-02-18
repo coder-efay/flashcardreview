@@ -30,11 +30,7 @@ class CategoriesTableViewController: UITableViewController {
             self.categories = userCategories
         }
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        <#code#>
-//    }
-    
+
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,9 +43,7 @@ class CategoriesTableViewController: UITableViewController {
         cell.textLabel?.text = category.categoryName
         return cell
     }
-    
-    //
-    
+
     func showAlert() {
         let alertController = UIAlertController(title: "Create A New Category", message: "", preferredStyle: .alert)
         let submitAction = UIAlertAction(title: "Submit", style: .default) { (action) in
@@ -62,7 +56,6 @@ class CategoriesTableViewController: UITableViewController {
             } else {
                 return
             }
-            
         }
         let cancel = UIAlertAction(title: "Cancel", style: .destructive) { (action) in }
         alertController.addTextField { (textField: UITextField) in
@@ -75,6 +68,15 @@ class CategoriesTableViewController: UITableViewController {
         alertController.addAction(cancel)
         present(alertController, animated: true, completion: nil)
     }
-    
 }
 
+extension CategoriesTableViewController {
+    
+    // Navigate to next screen: Categories
+    public static func storyboardInstance() -> UINavigationController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let presentedVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController
+        let navController = UINavigationController(rootViewController: presentedVC)
+        return navController
+    }
+}

@@ -130,11 +130,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="60A-Ut-acD">
-                        <barButtonItem key="rightBarButtonItem" title="New Category" id="W2N-6X-HjQ">
+                        <barButtonItem key="leftBarButtonItem" title="New Category" id="W2N-6X-HjQ">
                             <connections>
                                 <action selector="newCategoryBarButtonPressed:" destination="wfR-iw-DUK" id="RJQ-WW-Zdk"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="1Yq-74-6p8"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOL-fV-R5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
