@@ -11,10 +11,11 @@ import SnapKit
 
 class QuizCardViewFront: UIView {
 
-    lazy var quizCardLabel: UILabel = {
+    lazy var questionLabel: UILabel = {
        let label = UILabel()
-        label.text = "Question"
+        label.text = "QUESTION"
         label.textAlignment = .center
+        label.layer.borderWidth = 2
         return label
     }()
     
@@ -32,18 +33,18 @@ class QuizCardViewFront: UIView {
     }
     
     private func commonInit() {
-        backgroundColor = .clear
+        backgroundColor = .green
         setupViews()
         setupConstraints()
     }
     
     private func setupViews() {
-        self.addSubview(quizCardLabel)
+        self.addSubview(questionLabel)
     }
 
     
     private func setupConstraints() {
-        quizCardLabel.snp.makeConstraints { (make) in
+        questionLabel.snp.makeConstraints { (make) in
             make.edges.equalTo(self.safeAreaLayoutGuide.snp.edges)
         }
         

@@ -7,26 +7,42 @@
 //
 
 import UIKit
+import SnapKit
 
 class QuizViewController: UIViewController {
 
     @IBOutlet weak var cardView: UIView!
-//        var cardView: UIView!
-    var front: UIView!
-    var back: UIView!
+    var front = QuizCardViewFront()
+    var back = QuizCardViewBack()
     var showingFront = true
+    var category: String?
+    var questions: [Card] = [] {
+        didSet {
+            print("\(questions.count) cards for quiz")
+        }
+    }
+    var currentCard: Card?
     
     @IBAction func cardTapped(_ sender: UITapGestureRecognizer) {
-        
         print("card tapped")
         
-        // TODO: Show Question
         if (showingFront) {
-            UIView.transition(from: front, to: back, duration: 1, options: UIViewAnimationOptions.transitionFlipFromRight, completion: nil)
+            UIView.transition(from: front, to: back, duration: 1, options: UIViewAnimationOptions.transitionFlipFromRight, completion: { (results) in
+                self.cardView.addSubview(self.back)
+                self.back.snp.makeConstraints{ (make) in
+                    make.edges.equalTo(self.cardView.snp.edges)
+                }
+                self.back.answerLabel.text = self.currentCard?.answer
+            })
             showingFront = false
         } else {
-            // TODO: Flip to Show Answer
-            UIView.transition(from: back, to: front, duration: 1, options: UIViewAnimationOptions.transitionFlipFromLeft, completion: nil)
+            UIView.transition(from: back, to: front, duration: 1, options: UIViewAnimationOptions.transitionFlipFromLeft, completion: { (results) in
+                self.cardView.addSubview(self.front)
+                self.front.snp.makeConstraints{ (make) in
+                    make.edges.equalTo(self.cardView.snp.edges)
+                }
+                self.front.questionLabel.text = self.currentCard?.question
+            })
             showingFront = true
         }
     }
@@ -34,11 +50,14 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cardView.backgroundColor = .red
+        // TODO: randomize cards
+        currentCard = questions[0]
         
-        front = QuizCardViewFront()
-        back = QuizCardViewBack()
         self.cardView.addSubview(front)
+        front.questionLabel.text = currentCard?.question
+        front.snp.makeConstraints { (make) in
+            make.edges.equalTo(cardView.snp.edges)
+        }
         view.addSubview(cardView)
     }
 

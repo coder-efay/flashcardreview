@@ -59,7 +59,12 @@ class QuestionsTableViewController: UITableViewController {
                 guard let destination = segue.destination as? NewCardViewController else { return }
                 let selectedCategory = category
                 destination.category = selectedCategory
-//                destination.categoryLabel.text = selectedCategory
+            case "CardsToQuiz":
+                guard let destination = segue.destination as? QuizViewController else { return }
+                let selectedCategory = category
+                let cardsForCategory = questions
+                destination.category = selectedCategory
+                destination.questions = cardsForCategory
             default:
                 break
             }
