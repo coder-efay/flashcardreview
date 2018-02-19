@@ -239,6 +239,7 @@
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JCJ-nI-O0s">
                                 <rect key="frame" x="163" y="537.5" width="51" height="31"/>
+                                <color key="onTintColor" red="1" green="0.5302794931" blue="0.57964875569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="practiceSwitch:" destination="FRW-Es-lJM" eventType="valueChanged" id="FVy-j6-fOU"/>
                                 </connections>
