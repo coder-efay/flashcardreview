@@ -22,6 +22,7 @@ class QuestionsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = category
         let currentUser = AuthUserService.manager.getCurrentUser()
         DBService.manager.getCardsFromCategory(fromUserID: (currentUser?.uid)!, category: category!) { (categoryCards) in
             self.questions = categoryCards

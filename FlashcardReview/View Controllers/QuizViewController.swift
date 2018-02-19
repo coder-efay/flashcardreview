@@ -32,6 +32,7 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = category
         loadRandomCard()
         front.snp.makeConstraints { (make) in
             make.edges.equalTo(cardView.snp.edges)

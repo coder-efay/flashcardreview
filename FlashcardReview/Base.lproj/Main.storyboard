@@ -148,7 +148,7 @@
             </objects>
             <point key="canvasLocation" x="1329" y="134"/>
         </scene>
-        <!--Questions-->
+        <!--Questions Table View Controller-->
         <scene sceneID="xqb-Yn-Znz">
             <objects>
                 <tableViewController id="GKN-US-ZwC" customClass="QuestionsTableViewController" customModule="FlashcardReview" customModuleProvider="target" sceneMemberID="viewController">
@@ -187,7 +187,7 @@
                             <outlet property="delegate" destination="GKN-US-ZwC" id="rTh-eB-Khc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Questions" id="ZlY-kZ-XTE">
+                    <navigationItem key="navigationItem" id="ZlY-kZ-XTE">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="PoB-zO-JIh">
                                 <connections>
