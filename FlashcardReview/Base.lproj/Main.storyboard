@@ -223,21 +223,31 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gog-xX-Y2C">
+                                <rect key="frame" x="140" y="517.5" width="94" height="30"/>
+                                <state key="normal" title="Random Card"/>
+                                <connections>
+                                    <action selector="nextCardButtonPressed:" destination="FRW-Es-lJM" eventType="touchUpInside" id="fca-DC-Pof"/>
+                                    <action selector="randomCardButtonPressed:" destination="FRW-Es-lJM" eventType="touchUpInside" id="uzS-sX-SBM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIq-eK-ttQ">
                                 <rect key="frame" x="153" y="457.5" width="69" height="30"/>
                                 <state key="normal" title="Next Card"/>
                                 <connections>
-                                    <action selector="newCardButtonPressed:" destination="FRW-Es-lJM" eventType="touchUpInside" id="fca-DC-Pof"/>
+                                    <action selector="nextCardButtonPressed:" destination="FRW-Es-lJM" eventType="touchUpInside" id="pTG-pz-KN1"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Wi9-nI-Zoj" firstAttribute="top" secondItem="MlU-OV-o7J" secondAttribute="top" constant="30" id="AyT-qc-l7Z"/>
+                            <constraint firstItem="gIq-eK-ttQ" firstAttribute="centerX" secondItem="MlU-OV-o7J" secondAttribute="centerX" id="Fgc-WB-aHk"/>
                             <constraint firstItem="Wi9-nI-Zoj" firstAttribute="width" secondItem="cUI-m9-tDR" secondAttribute="width" multiplier="0.8" id="KjJ-p0-Wo5"/>
+                            <constraint firstItem="gIq-eK-ttQ" firstAttribute="top" secondItem="Wi9-nI-Zoj" secondAttribute="bottom" constant="30" id="KuY-me-PTe"/>
                             <constraint firstItem="Gog-xX-Y2C" firstAttribute="centerX" secondItem="MlU-OV-o7J" secondAttribute="centerX" id="UNQ-XD-QIU"/>
                             <constraint firstItem="Wi9-nI-Zoj" firstAttribute="height" secondItem="cUI-m9-tDR" secondAttribute="height" multiplier="0.5" id="gMp-eL-hha"/>
                             <constraint firstItem="Wi9-nI-Zoj" firstAttribute="centerX" secondItem="MlU-OV-o7J" secondAttribute="centerX" id="ijw-CN-blT"/>
-                            <constraint firstItem="Gog-xX-Y2C" firstAttribute="top" secondItem="Wi9-nI-Zoj" secondAttribute="bottom" constant="30" id="mSy-h0-6Vn"/>
+                            <constraint firstItem="Gog-xX-Y2C" firstAttribute="top" secondItem="gIq-eK-ttQ" secondAttribute="bottom" constant="30" id="qQY-ay-pOw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MlU-OV-o7J"/>
                     </view>
@@ -385,7 +395,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJl-Th-Mw9">
-                                <rect key="frame" x="9" y="69.5" width="356.5" height="20.5"/>
+                                <rect key="frame" x="9.5" y="69.5" width="356" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="ovk-PA-1o8"/>
                                 </constraints>

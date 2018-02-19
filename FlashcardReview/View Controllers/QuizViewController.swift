@@ -10,22 +10,56 @@ import UIKit
 import SnapKit
 
 class QuizViewController: UIViewController {
-
+    
     @IBOutlet weak var cardView: UIView!
     var front = QuizCardViewFront()
     var back = QuizCardViewBack()
     var showingFront = true
     var category: String?
+    var currentIndex = 0
+    var currentCard: Card?
     var questions: [Card] = [] {
         didSet {
             print("\(questions.count) cards for quiz")
         }
     }
-    var currentCard: Card?
     
     @IBAction func cardTapped(_ sender: UITapGestureRecognizer) {
         print("card tapped")
-        
+        checkCardSide()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadRandomCard()
+        front.snp.makeConstraints { (make) in
+            make.edges.equalTo(cardView.snp.edges)
+        }
+    }
+    
+    private func loadRandomCard() {
+        self.cardView.addSubview(front)
+        currentIndex = Int(arc4random_uniform(UInt32(self.questions.count)))
+        print("randomIndex: \(currentIndex)")
+        currentCard = questions[currentIndex]
+        front.questionLabel.text = currentCard?.question
+        view.addSubview(cardView)
+    }
+    
+    private func loadNextCard() {
+        self.cardView.addSubview(front)
+        if currentIndex == questions.count - 1 {
+            currentIndex = 0
+        } else {
+            currentIndex += 1
+        }
+        print("currentIndex: \(currentIndex)")
+        currentCard = questions[currentIndex]
+        front.questionLabel.text = currentCard?.question
+        view.addSubview(cardView)
+    }
+    
+    private func checkCardSide() {
         if (showingFront) {
             UIView.transition(from: front, to: back, duration: 1, options: UIViewAnimationOptions.transitionFlipFromRight, completion: { (results) in
                 self.cardView.addSubview(self.back)
@@ -47,38 +81,20 @@ class QuizViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // TODO: randomize cards
-        currentCard = questions[0]
-        
-        self.cardView.addSubview(front)
-        front.questionLabel.text = currentCard?.question
-        front.snp.makeConstraints { (make) in
-            make.edges.equalTo(cardView.snp.edges)
-        }
-        view.addSubview(cardView)
-    }
-
-    
-    @IBAction func newCardButtonPressed(_ sender: UIButton) {
-        // TODO: Show next Question
+    @IBAction func nextCardButtonPressed(_ sender: UIButton) {
         print("Next Card button pressed")
+        loadNextCard()
+        showingFront = false
+        checkCardSide()
     }
     
-
-   
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func randomCardButtonPressed(_ sender: UIButton) {
+        print("Random Card button pressed")
+        loadRandomCard()
+        showingFront = false
+        checkCardSide()
     }
-    */
-
+    
+    
+    
 }
