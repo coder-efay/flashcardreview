@@ -279,6 +279,7 @@
                     </view>
                     <connections>
                         <outlet property="cardView" destination="Wi9-nI-Zoj" id="nqk-bE-0zS"/>
+                        <outlet property="switchObject" destination="JCJ-nI-O0s" id="Wa2-G6-nSB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2u-1e-ZUd" userLabel="First Responder" sceneMemberID="firstResponder"/>

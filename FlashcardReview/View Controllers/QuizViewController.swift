@@ -23,6 +23,7 @@ class QuizViewController: UIViewController {
             print("\(questions.count) cards for quiz")
         }
     }
+    @IBOutlet weak var switchObject: UISwitch!
     
     @IBAction func cardTapped(_ sender: UITapGestureRecognizer) {
         print("card tapped")
@@ -35,6 +36,7 @@ class QuizViewController: UIViewController {
         front.snp.makeConstraints { (make) in
             make.edges.equalTo(cardView.snp.edges)
         }
+        switchObject.isOn = (currentCard?.correct)!
     }
     
     private func loadRandomCard() {
@@ -86,6 +88,7 @@ class QuizViewController: UIViewController {
         loadNextCard()
         showingFront = false
         checkCardSide()
+        switchObject.isOn = (currentCard?.correct)!
     }
     
     @IBAction func randomCardButtonPressed(_ sender: UIButton) {
@@ -93,20 +96,15 @@ class QuizViewController: UIViewController {
         loadRandomCard()
         showingFront = false
         checkCardSide()
+        switchObject.isOn = (currentCard?.correct)!
     }
     
     @IBAction func practiceSwitch(_ sender: UISwitch) {
-        
-        //        TODO: Set starting status to the current Bool
-        
-        
         if sender.isOn {
             DBService.manager.editCard(withPostID: (currentCard?.postID)!, newCorrect: true)
         } else {
             DBService.manager.editCard(withPostID: (currentCard?.postID)!, newCorrect: false)
         }
-        
-        
     }
     
     
