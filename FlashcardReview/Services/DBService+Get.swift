@@ -72,12 +72,13 @@ extension DBService {
                     let answer = cardDict["answer"] as? String,
                     let correct = cardDict["correct"] as? Bool,
                     let category = cardDict["category"] as? String,
-                    let userID = cardDict["userID"] as? String
+                    let userID = cardDict["userID"] as? String,
+                    let postID = cardDict["postID"] as? String
                     else {
                         print("Could not get card")
                         return
                 }
-                let card = Card(question: question, answer: answer, correct: correct, category: category, userID: userID)
+                let card = Card(question: question, answer: answer, correct: correct, category: category, userID: userID, postID: postID)
                 cards.append(card)
             }
             completion(cards)

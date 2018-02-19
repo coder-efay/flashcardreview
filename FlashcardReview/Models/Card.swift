@@ -15,4 +15,5 @@ struct Card {
     let correct: Bool
     let category: String
     let userID: String
+    let postID: String
 }

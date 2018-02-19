@@ -16,7 +16,7 @@ class QuestionsTableViewController: UITableViewController {
     var questions: [Card] = [] {
         didSet {
             tableView.reloadData()
-            print("\(questions.count) cards set")
+            print("\(questions.count) cards set in \(category ?? "")")
         }
     }
     

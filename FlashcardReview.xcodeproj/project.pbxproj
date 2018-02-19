@@ -17,6 +17,7 @@
 		814987E32032379E00259A16 /* FlashcardReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814987E22032379E00259A16 /* FlashcardReviewTests.swift */; };
 		814987EE2032379E00259A16 /* FlashcardReviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814987ED2032379E00259A16 /* FlashcardReviewUITests.swift */; };
 		814987FC203237EB00259A16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 814987FB203237EB00259A16 /* GoogleService-Info.plist */; };
+		815E1824203A781200BB9911 /* DBService+Edit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E1823203A781200BB9911 /* DBService+Edit.swift */; };
 		8177EBA52034FFC900D646CD /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBA42034FFC900D646CD /* CreateNewAccountViewController.swift */; };
 		8177EBA7203500BF00D646CD /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBA6203500BF00D646CD /* CategoriesTableViewController.swift */; };
 		8177EBA92035073400D646CD /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8177EBA82035073400D646CD /* AppUser.swift */; };
@@ -73,6 +74,7 @@
 		814987ED2032379E00259A16 /* FlashcardReviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardReviewUITests.swift; sourceTree = "<group>"; };
 		814987EF2032379E00259A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		814987FB203237EB00259A16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		815E1823203A781200BB9911 /* DBService+Edit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+Edit.swift"; sourceTree = "<group>"; };
 		8177EBA42034FFC900D646CD /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewController.swift; sourceTree = "<group>"; };
 		8177EBA6203500BF00D646CD /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		8177EBA82035073400D646CD /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				8177EBAA2035096A00D646CD /* DBService.swift */,
 				8177EBB420364FC400D646CD /* DBService+Add.swift */,
 				8177EBB220364FAA00D646CD /* DBService+Get.swift */,
+				815E1823203A781200BB9911 /* DBService+Edit.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				8177EBAB2035096A00D646CD /* DBService.swift in Sources */,
 				8177EBA52034FFC900D646CD /* CreateNewAccountViewController.swift in Sources */,
 				812050732033E77C00D205F3 /* QuizViewController.swift in Sources */,
+				815E1824203A781200BB9911 /* DBService+Edit.swift in Sources */,
 				8177EBA7203500BF00D646CD /* CategoriesTableViewController.swift in Sources */,
 				8177EBB320364FAA00D646CD /* DBService+Get.swift in Sources */,
 				8177EBAF20350DF300D646CD /* Card.swift in Sources */,

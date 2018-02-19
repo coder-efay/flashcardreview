@@ -95,6 +95,16 @@ class QuizViewController: UIViewController {
         checkCardSide()
     }
     
+    @IBAction func practiceSwitch(_ sender: UISwitch) {
+        if sender.isOn {
+//            DBService.manager.updateCard
+//            currentCard?.correct = true
+        } else {
+//            currentCard?.correct = false
+        }
+        
+        
+    }
     
     
 }

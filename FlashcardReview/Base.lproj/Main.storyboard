@@ -223,7 +223,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gog-xX-Y2C">
-                                <rect key="frame" x="140" y="517.5" width="94" height="30"/>
+                                <rect key="frame" x="37.5" y="457.5" width="94" height="30"/>
                                 <state key="normal" title="Random Card"/>
                                 <connections>
                                     <action selector="nextCardButtonPressed:" destination="FRW-Es-lJM" eventType="touchUpInside" id="fca-DC-Pof"/>
@@ -231,23 +231,49 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIq-eK-ttQ">
-                                <rect key="frame" x="153" y="457.5" width="69" height="30"/>
+                                <rect key="frame" x="268.5" y="457.5" width="69" height="30"/>
                                 <state key="normal" title="Next Card"/>
                                 <connections>
                                     <action selector="nextCardButtonPressed:" destination="FRW-Es-lJM" eventType="touchUpInside" id="pTG-pz-KN1"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JCJ-nI-O0s">
+                                <rect key="frame" x="163" y="537.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="practiceSwitch:" destination="FRW-Es-lJM" eventType="valueChanged" id="FVy-j6-fOU"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perfect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ee3-8F-Cch">
+                                <rect key="frame" x="227" y="543" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdk-0m-7nK">
+                                <rect key="frame" x="85" y="543" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="gIq-eK-ttQ" firstAttribute="trailing" secondItem="Wi9-nI-Zoj" secondAttribute="trailing" id="1cA-W5-ucX"/>
+                            <constraint firstItem="JCJ-nI-O0s" firstAttribute="top" secondItem="Wi9-nI-Zoj" secondAttribute="bottom" constant="110" id="4dH-Vy-XV1"/>
+                            <constraint firstItem="ee3-8F-Cch" firstAttribute="centerY" secondItem="JCJ-nI-O0s" secondAttribute="centerY" id="8XF-gL-XOf"/>
                             <constraint firstItem="Wi9-nI-Zoj" firstAttribute="top" secondItem="MlU-OV-o7J" secondAttribute="top" constant="30" id="AyT-qc-l7Z"/>
-                            <constraint firstItem="gIq-eK-ttQ" firstAttribute="centerX" secondItem="MlU-OV-o7J" secondAttribute="centerX" id="Fgc-WB-aHk"/>
+                            <constraint firstItem="JCJ-nI-O0s" firstAttribute="centerX" secondItem="MlU-OV-o7J" secondAttribute="centerX" id="Hoz-sw-6TY"/>
                             <constraint firstItem="Wi9-nI-Zoj" firstAttribute="width" secondItem="cUI-m9-tDR" secondAttribute="width" multiplier="0.8" id="KjJ-p0-Wo5"/>
                             <constraint firstItem="gIq-eK-ttQ" firstAttribute="top" secondItem="Wi9-nI-Zoj" secondAttribute="bottom" constant="30" id="KuY-me-PTe"/>
-                            <constraint firstItem="Gog-xX-Y2C" firstAttribute="centerX" secondItem="MlU-OV-o7J" secondAttribute="centerX" id="UNQ-XD-QIU"/>
+                            <constraint firstItem="Gog-xX-Y2C" firstAttribute="leading" secondItem="Wi9-nI-Zoj" secondAttribute="leading" id="QkI-bC-Zfy"/>
+                            <constraint firstItem="ee3-8F-Cch" firstAttribute="leading" secondItem="JCJ-nI-O0s" secondAttribute="trailing" constant="15" id="Sni-4d-L0P"/>
+                            <constraint firstItem="gIq-eK-ttQ" firstAttribute="centerY" secondItem="Gog-xX-Y2C" secondAttribute="centerY" id="YFT-Bv-Kro"/>
+                            <constraint firstItem="gIq-eK-ttQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cUI-m9-tDR" secondAttribute="leading" constant="20" symbolic="YES" id="YuM-SH-0ST"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gog-xX-Y2C" secondAttribute="trailing" constant="20" symbolic="YES" id="bbW-vE-Vm1"/>
+                            <constraint firstItem="xdk-0m-7nK" firstAttribute="centerY" secondItem="JCJ-nI-O0s" secondAttribute="centerY" id="boN-Li-Mri"/>
+                            <constraint firstItem="JCJ-nI-O0s" firstAttribute="leading" secondItem="xdk-0m-7nK" secondAttribute="trailing" constant="15" id="dYj-23-2ei"/>
                             <constraint firstItem="Wi9-nI-Zoj" firstAttribute="height" secondItem="cUI-m9-tDR" secondAttribute="height" multiplier="0.5" id="gMp-eL-hha"/>
                             <constraint firstItem="Wi9-nI-Zoj" firstAttribute="centerX" secondItem="MlU-OV-o7J" secondAttribute="centerX" id="ijw-CN-blT"/>
-                            <constraint firstItem="Gog-xX-Y2C" firstAttribute="top" secondItem="gIq-eK-ttQ" secondAttribute="bottom" constant="30" id="qQY-ay-pOw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MlU-OV-o7J"/>
                     </view>
