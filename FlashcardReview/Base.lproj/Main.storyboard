@@ -15,7 +15,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="FlashcardReview" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="FlashcardReview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,6 +137,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Topics" id="60A-Ut-acD">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="n90-G4-iHh">
+                            <connections>
+                                <action selector="logOutButtonPressed:" destination="wfR-iw-DUK" id="Ssq-Pm-fWN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New Category" id="W2N-6X-HjQ">
                             <connections>
                                 <action selector="newCategoryBarButtonPressed:" destination="wfR-iw-DUK" id="RJQ-WW-Zdk"/>
@@ -201,6 +206,9 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="quizBarButton" destination="bca-mF-a18" id="CKx-e2-bfM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="id1-X5-f3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

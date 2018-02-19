@@ -12,6 +12,11 @@ import FirebaseDatabase
 
 class CategoriesTableViewController: UITableViewController {
     
+    @IBAction func logOutButtonPressed(_ sender: UIBarButtonItem) {
+        AuthUserService.manager.signOut()
+        present(LoginViewController.storyboardInstance(), animated: true, completion: nil)
+    }
+    
     @IBAction func newCategoryBarButtonPressed(_ sender: UIBarButtonItem) {
         showAlert()
     }
@@ -52,6 +57,12 @@ class CategoriesTableViewController: UITableViewController {
     }
 
     func showAlert() {
+        // create switch statement using sender?
+        
+        // Log Out begin
+        // Log Out end
+        
+        // New Category begin
         let alertController = UIAlertController(title: "Create A New Category", message: "", preferredStyle: .alert)
         let submitAction = UIAlertAction(title: "Submit", style: .default) { (action) in
             let textField = alertController.textFields![0]
@@ -75,6 +86,7 @@ class CategoriesTableViewController: UITableViewController {
         alertController.addAction(submitAction)
         alertController.addAction(cancel)
         present(alertController, animated: true, completion: nil)
+        // New Category end
     }
 }
 

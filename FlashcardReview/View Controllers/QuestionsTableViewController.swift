@@ -10,6 +10,7 @@ import UIKit
 
 class QuestionsTableViewController: UITableViewController {
 
+    @IBOutlet weak var quizBarButton: UIBarButtonItem!
     
     var category: String?
     
@@ -17,17 +18,25 @@ class QuestionsTableViewController: UITableViewController {
         didSet {
             tableView.reloadData()
             print("\(questions.count) cards set in \(category ?? "")")
+            if questions.count >= 1 {
+                quizBarButton.isEnabled = true
+            } else {
+                quizBarButton.isEnabled = false
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = category
+    
+        
         let currentUser = AuthUserService.manager.getCurrentUser()
         DBService.manager.getCardsFromCategory(fromUserID: (currentUser?.uid)!, category: category!) { (categoryCards) in
             self.questions = categoryCards
         }
     }
+
 
 
     // MARK: - Table view data source
