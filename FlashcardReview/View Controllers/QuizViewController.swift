@@ -96,11 +96,14 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func practiceSwitch(_ sender: UISwitch) {
+        
+        //        TODO: Set starting status to the current Bool
+        
+        
         if sender.isOn {
-//            DBService.manager.updateCard
-//            currentCard?.correct = true
+            DBService.manager.editCard(withPostID: (currentCard?.postID)!, newCorrect: true)
         } else {
-//            currentCard?.correct = false
+            DBService.manager.editCard(withPostID: (currentCard?.postID)!, newCorrect: false)
         }
         
         

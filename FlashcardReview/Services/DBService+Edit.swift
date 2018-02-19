@@ -10,14 +10,15 @@ import Foundation
 import FirebaseDatabase
 
 extension DBService {
-    public func editCard(withQuestion question: String, answer: String, correct: Bool, category: String) {
+//    public func editCard(withQuestion question: String, answer: String, correct: Bool, category: String) {
+    public func editCard(withPostID postID: String, newCorrect: Bool) {
+    
+//        let currentUser = AuthUserService.manager.getCurrentUser()
+        let ref = cardsRef.child(postID)
         
-        let currentUser = AuthUserService.manager.getCurrentUser()
-        let ref = cardsRef.childByAutoId()
+//        let card = Card(question: question, answer: answer, correct: correct, category: category, userID: (currentUser?.uid)!, postID: ref.key)
         
-        let card = Card(question: question, answer: answer, correct: correct, category: category, userID: (currentUser?.uid)!, postID: ref.key)
-        
-            ref.updateChildValues(["correct": correct])
+            ref.updateChildValues(["correct": newCorrect])
                                         
         
     }

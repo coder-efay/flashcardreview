@@ -32,7 +32,7 @@ extension DBService {
     public func addCard(withQuestion question: String, answer: String, correct: Bool, category: String) {
         let ref = cardsRef.childByAutoId()
         let currentUser = AuthUserService.manager.getCurrentUser()
-        let card = Card(question: question, answer: answer, correct: correct, category: category, userID: (currentUser?.uid)!, postID: ref.key)
+        let card = Card(question: question, answer: answer, correct: false, category: category, userID: (currentUser?.uid)!, postID: ref.key)
         
         ref.setValue(["question": card.question,
                       "answer": card.answer,
