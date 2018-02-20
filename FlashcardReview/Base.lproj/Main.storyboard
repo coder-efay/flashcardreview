@@ -12,9 +12,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="MarkerFeltThin.ttf">
-            <string>MarkerFelt-Thin</string>
-        </array>
         <array key="MarkerFeltWide.ttf">
             <string>MarkerFelt-Wide</string>
         </array>
@@ -87,7 +84,7 @@
                                 <rect key="frame" x="94" y="583" width="187.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="tintColor" red="1" green="0.5302794931" blue="0.57964875569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Create a New Account">
+                                <state key="normal" title="Create New Account">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -503,47 +500,43 @@
                                     <action selector="cancelButtonPressed:" destination="Tfg-P7-1LZ" eventType="touchUpInside" id="1dn-pI-WyC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJl-Th-Mw9">
-                                <rect key="frame" x="9.5" y="60.5" width="356" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJl-Th-Mw9">
+                                <rect key="frame" x="9.5" y="60.5" width="356" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20.5" id="ovk-PA-1o8"/>
+                                    <constraint firstAttribute="height" constant="35" id="ovk-PA-1o8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.5302794931" blue="0.57964875569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JOz-0W-aNE">
-                                <rect key="frame" x="0.0" y="86.5" width="375" height="510.5"/>
+                                <rect key="frame" x="0.0" y="125.5" width="375" height="411.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrC-HJ-vlz">
                                         <rect key="frame" x="10" y="0.0" width="355" height="25"/>
-                                        <color key="backgroundColor" red="1" green="0.5302794931" blue="0.57964875569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="6YC-MP-k7L"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.5302794931" blue="0.57964875569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <size key="shadowOffset" width="1" height="1"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALQ-vv-agd">
-                                        <rect key="frame" x="10" y="30" width="355" height="223"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <rect key="frame" x="10" y="30" width="355" height="173.5"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azi-BJ-BPO">
-                                        <rect key="frame" x="10" y="258" width="355" height="25"/>
-                                        <color key="backgroundColor" red="1" green="0.5302794931" blue="0.57964875569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="10" y="208.5" width="355" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.5302794931" blue="0.57964875569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <size key="shadowOffset" width="1" height="1"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1G-9f-pSn">
-                                        <rect key="frame" x="10" y="288" width="355" height="222.5"/>
+                                        <rect key="frame" x="10" y="238.5" width="355" height="173"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
@@ -563,13 +556,13 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSm-ey-jHP">
-                                <rect key="frame" x="136.5" y="607" width="102" height="30"/>
+                                <rect key="frame" x="115.5" y="587" width="144" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="EXz-KJ-csH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="tintColor" red="1" green="0.5302794931" blue="0.57964875569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Create Card"/>
+                                <state key="normal" title="Create New Card"/>
                                 <connections>
                                     <action selector="createCardButtonPressed:" destination="Tfg-P7-1LZ" eventType="touchUpInside" id="DJI-wj-TSG"/>
                                 </connections>
@@ -580,15 +573,16 @@
                             <constraint firstItem="uJ7-0q-CUu" firstAttribute="leading" secondItem="FCQ-QN-M6R" secondAttribute="leading" constant="15" id="1ta-Q4-O3x"/>
                             <constraint firstItem="sJl-Th-Mw9" firstAttribute="width" secondItem="BkC-K1-Res" secondAttribute="width" multiplier="0.95" id="8Qj-bM-od8"/>
                             <constraint firstItem="JOz-0W-aNE" firstAttribute="leading" secondItem="FCQ-QN-M6R" secondAttribute="leading" id="B4B-UZ-ldm"/>
+                            <constraint firstItem="sJl-Th-Mw9" firstAttribute="top" secondItem="FCQ-QN-M6R" secondAttribute="top" constant="40.5" id="I8y-AZ-n2t"/>
                             <constraint firstItem="sJl-Th-Mw9" firstAttribute="top" secondItem="uJ7-0q-CUu" secondAttribute="bottom" constant="5" id="JkH-UA-QjB"/>
                             <constraint firstItem="uJ7-0q-CUu" firstAttribute="top" secondItem="FCQ-QN-M6R" secondAttribute="top" constant="15" id="Ouk-X8-XDZ"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uJ7-0q-CUu" secondAttribute="trailing" constant="20" symbolic="YES" id="Sl0-iC-IRP"/>
-                            <constraint firstItem="JOz-0W-aNE" firstAttribute="top" secondItem="sJl-Th-Mw9" secondAttribute="bottom" constant="5" id="cv6-Fc-lVV"/>
+                            <constraint firstItem="JOz-0W-aNE" firstAttribute="top" secondItem="sJl-Th-Mw9" secondAttribute="bottom" constant="30" id="cv6-Fc-lVV"/>
                             <constraint firstItem="rSm-ey-jHP" firstAttribute="centerX" secondItem="BkC-K1-Res" secondAttribute="centerX" id="ddY-XS-PvX"/>
                             <constraint firstItem="sJl-Th-Mw9" firstAttribute="centerX" secondItem="FCQ-QN-M6R" secondAttribute="centerX" id="jO4-Ph-kHM"/>
                             <constraint firstItem="FCQ-QN-M6R" firstAttribute="trailing" secondItem="JOz-0W-aNE" secondAttribute="trailing" id="laB-t6-J16"/>
-                            <constraint firstItem="rSm-ey-jHP" firstAttribute="top" secondItem="JOz-0W-aNE" secondAttribute="bottom" constant="10" id="v9r-zo-wjj"/>
-                            <constraint firstItem="FCQ-QN-M6R" firstAttribute="bottom" secondItem="rSm-ey-jHP" secondAttribute="bottom" constant="30" id="ytG-0o-uit"/>
+                            <constraint firstItem="rSm-ey-jHP" firstAttribute="top" secondItem="JOz-0W-aNE" secondAttribute="bottom" constant="50" id="v9r-zo-wjj"/>
+                            <constraint firstItem="FCQ-QN-M6R" firstAttribute="bottom" secondItem="rSm-ey-jHP" secondAttribute="bottom" constant="50" id="ytG-0o-uit"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FCQ-QN-M6R"/>
                     </view>

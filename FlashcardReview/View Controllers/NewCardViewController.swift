@@ -46,7 +46,7 @@ class NewCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.categoryLabel.text = "Add Flashcard to: \(category ?? "")"
+        self.categoryLabel.text = "Add Card to \(category ?? "")"
     }
     
     
