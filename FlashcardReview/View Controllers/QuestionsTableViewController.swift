@@ -50,8 +50,17 @@ class QuestionsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath)
         let card = questions[indexPath.row]
-        cell.textLabel?.text = "Q: \(card.question)"
-        cell.detailTextLabel?.text = "A: \(card.answer)"
+        cell.textLabel?.text = card.question
+        cell.detailTextLabel?.text = card.answer
+        var status = ""
+        if card.correct == false {
+            status = "Need to Practice"
+            cell.imageView?.image = #imageLiteral(resourceName: "x mark")
+        } else {
+            status = "Perfect"
+            cell.imageView?.image = #imageLiteral(resourceName: "check mark")
+        }
+        
         return cell
     }
 

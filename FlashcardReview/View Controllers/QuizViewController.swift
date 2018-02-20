@@ -33,6 +33,8 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = category
+        view.backgroundColor = UIColor(red:1.00, green:0.53, blue:0.58, alpha:1.0)
+//        view.backgroundColor = UIColor(red:1.00, green:0.73, blue:0.67, alpha:1.0)
         loadRandomCard()
         front.snp.makeConstraints { (make) in
             make.edges.equalTo(cardView.snp.edges)
@@ -58,7 +60,7 @@ class QuizViewController: UIViewController {
         }
         print("currentIndex: \(currentIndex)")
         currentCard = questions[currentIndex]
-        front.questionLabel.text = currentCard?.question
+        front.questionLabel.text = "Q: \(self.currentCard?.question ?? "")"
         view.addSubview(cardView)
     }
     
@@ -69,7 +71,7 @@ class QuizViewController: UIViewController {
                 self.back.snp.makeConstraints{ (make) in
                     make.edges.equalTo(self.cardView.snp.edges)
                 }
-                self.back.answerLabel.text = self.currentCard?.answer
+                self.back.answerLabel.text = "A: \(self.currentCard?.answer ?? "")"
             })
             showingFront = false
         } else {
@@ -78,7 +80,7 @@ class QuizViewController: UIViewController {
                 self.front.snp.makeConstraints{ (make) in
                     make.edges.equalTo(self.cardView.snp.edges)
                 }
-                self.front.questionLabel.text = self.currentCard?.question
+                self.front.questionLabel.text = "Q: \(self.currentCard?.question ?? "")"
             })
             showingFront = true
         }

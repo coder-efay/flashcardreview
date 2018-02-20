@@ -14,8 +14,11 @@ class QuizCardViewFront: UIView {
     lazy var questionLabel: UILabel = {
        let label = UILabel()
         label.text = "QUESTION"
+        label.font = UIFont.systemFont(ofSize: 20.0, weight: .regular)
+        label.textColor = UIColor(red:1.00, green:0.53, blue:0.58, alpha:1.0)
         label.textAlignment = .center
-        label.layer.borderWidth = 2
+        label.numberOfLines = 0
+//        label.layer.borderWidth = 2
         return label
     }()
     
@@ -33,7 +36,7 @@ class QuizCardViewFront: UIView {
     }
     
     private func commonInit() {
-        backgroundColor = .green
+        backgroundColor = UIColor.white
         setupViews()
         setupConstraints()
     }
@@ -45,7 +48,11 @@ class QuizCardViewFront: UIView {
     
     private func setupConstraints() {
         questionLabel.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.safeAreaLayoutGuide.snp.edges)
+//            make.edges.equalTo(self.safeAreaLayoutGuide.snp.edges)
+            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(10)
+            make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).offset(-10)
+            make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).offset(10)
+            make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).offset(-10)
         }
         
         
