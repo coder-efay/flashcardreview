@@ -24,19 +24,16 @@ class LoginViewController: UIViewController {
         // Verify login credentials
         AuthUserService.manager.delegate = self
         AuthUserService.manager.loginToAccount(withEmail: email, andPassword: pass)
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func tapOutsideTextfield(_ sender: UITapGestureRecognizer) {
+        emailTextField.resignFirstResponder()
+        passwordTextfield.resignFirstResponder()
+    }
 
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -56,7 +53,6 @@ class LoginViewController: UIViewController {
 extension LoginViewController: AuthUserServiceDelegate {
     func didFailLogin(_ authUserService: AuthUserService, error: Error) {
         self.showAlert(title: "\(error.localizedDescription)", message: "")
-//        print("Login failed")
     }
     
     func didLogin(_ authUserService: AuthUserService, userProfile: AppUser) {
@@ -65,8 +61,11 @@ extension LoginViewController: AuthUserServiceDelegate {
         let presentedVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController
         let navController = UINavigationController(rootViewController: presentedVC)
         present(navController, animated: true, completion: nil)
-//        print("User has logged in")
     }
-    
 }
 
+extension LoginViewController: UITextFieldDelegate {    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+    }
+}

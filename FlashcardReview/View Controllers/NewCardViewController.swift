@@ -49,6 +49,10 @@ class NewCardViewController: UIViewController {
         self.categoryLabel.text = "Add Card to \(category ?? "")"
     }
     
+    @IBAction func tapOutsideOfTextfield(_ sender: UITapGestureRecognizer) {
+        questionTextView.resignFirstResponder()
+        answerTextView.resignFirstResponder()
+    }
     
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -56,4 +60,11 @@ class NewCardViewController: UIViewController {
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
     }
+}
+
+extension NewCardViewController: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        textView.resignFirstResponder()
+    }
+    
 }
