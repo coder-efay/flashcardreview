@@ -14,7 +14,8 @@ class QuizCardViewFront: UIView {
     lazy var questionLabel: UILabel = {
        let label = UILabel()
         label.text = "QUESTION"
-        label.font = UIFont.systemFont(ofSize: 20.0, weight: .regular)
+        label.font = UIFont(name: "Marker Felt", size: 22.0)
+//        label.font = UIFont.systemFont(ofSize: 20.0, weight: .regular)
         label.textColor = UIColor(red:1.00, green:0.53, blue:0.58, alpha:1.0)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -36,7 +37,7 @@ class QuizCardViewFront: UIView {
     }
     
     private func commonInit() {
-        backgroundColor = UIColor.white
+//        backgroundColor = UIColor.white
         setupViews()
         setupConstraints()
     }

@@ -14,9 +14,11 @@ class QuizCardViewBack: UIView {
     lazy var answerLabel: UILabel = {
         let label = UILabel()
         label.text = "ANSWER"
-        label.font = UIFont.systemFont(ofSize: 20.0, weight: .light)
+        label.font = UIFont(name: "MarkerFelt-Thin", size: 22.0)
+//        label.font = UIFont.systemFont(ofSize: 20.0, weight: .light)
 //        label.textColor = UIColor(red:1.00, green:0.73, blue:0.67, alpha:1.0)
-        label.textColor = UIColor(red:1.00, green:0.53, blue:0.58, alpha:1.0)
+//        label.textColor = UIColor(red:1.00, green:0.53, blue:0.58, alpha:1.0)
+        label.textColor = UIColor.gray
         label.textAlignment = .center
         label.numberOfLines = 0
 //        label.layer.borderWidth = 2
@@ -37,7 +39,7 @@ class QuizCardViewBack: UIView {
     }
     
     private func commonInit() {
-        backgroundColor = UIColor.white
+//        backgroundColor = UIColor.white
         setupViews()
     }
     

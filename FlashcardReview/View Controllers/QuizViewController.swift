@@ -12,6 +12,11 @@ import SnapKit
 class QuizViewController: UIViewController {
     
     @IBOutlet weak var cardView: UIView!
+    
+    @IBOutlet weak var randomCardButton: UIButton!
+    @IBOutlet weak var nextCardButton: UIButton!
+    
+    
     var front = QuizCardViewFront()
     var back = QuizCardViewBack()
     var showingFront = true
@@ -33,7 +38,15 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = category
-        view.backgroundColor = UIColor(red:1.00, green:0.53, blue:0.58, alpha:1.0)
+        randomCardButton.layer.borderWidth = 1
+        randomCardButton.layer.borderColor = UIColor.black.cgColor
+        nextCardButton.layer.borderWidth = 1
+        nextCardButton.layer.borderColor = UIColor.white.cgColor
+        cardView.layer.borderWidth = 1
+        cardView.layer.cornerRadius = 15
+        cardView.layer.masksToBounds = true
+       // view.backgroundColor = UIColor(red:1.00, green:0.53, blue:0.58, alpha:1.0)
+
 //        view.backgroundColor = UIColor(red:1.00, green:0.73, blue:0.67, alpha:1.0)
         loadRandomCard()
         front.snp.makeConstraints { (make) in
@@ -68,6 +81,9 @@ class QuizViewController: UIViewController {
         if (showingFront) {
             UIView.transition(from: front, to: back, duration: 1, options: UIViewAnimationOptions.transitionFlipFromRight, completion: { (results) in
                 self.cardView.addSubview(self.back)
+                self.cardView.layer.borderWidth = 1
+                self.cardView.layer.cornerRadius = 15
+                self.cardView.layer.masksToBounds = true
                 self.back.snp.makeConstraints{ (make) in
                     make.edges.equalTo(self.cardView.snp.edges)
                 }
@@ -77,6 +93,9 @@ class QuizViewController: UIViewController {
         } else {
             UIView.transition(from: back, to: front, duration: 1, options: UIViewAnimationOptions.transitionFlipFromLeft, completion: { (results) in
                 self.cardView.addSubview(self.front)
+                self.cardView.layer.borderWidth = 1
+                self.cardView.layer.cornerRadius = 15
+                self.cardView.layer.masksToBounds = true
                 self.front.snp.makeConstraints{ (make) in
                     make.edges.equalTo(self.cardView.snp.edges)
                 }

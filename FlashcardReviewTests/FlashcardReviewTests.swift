@@ -21,9 +21,11 @@ class FlashcardReviewTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testCategoriesLoaded() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let categoriesVC = CategoriesTableViewController()
+        XCTAssertEqual(categoriesVC.categories.count, 3, "There are 3 categories")
     }
     
     func testPerformanceExample() {
