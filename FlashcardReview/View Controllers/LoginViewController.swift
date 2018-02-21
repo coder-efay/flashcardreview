@@ -57,10 +57,17 @@ extension LoginViewController: AuthUserServiceDelegate {
     
     func didLogin(_ authUserService: AuthUserService, userProfile: AppUser) {
         // Navigate to next screen: Categories
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let presentedVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController
-        let navController = UINavigationController(rootViewController: presentedVC)
-        present(navController, animated: true, completion: nil)
+        let myCategoriesVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController
+        let myNavController = UINavigationController(rootViewController: myCategoriesVC)
+        
+        let allQuestionsVC = storyboard.instantiateViewController(withIdentifier: "AllQuestionsTVC") as! AllDatabaseQuestionsTableViewController
+        let myNavCon2 = UINavigationController(rootViewController: allQuestionsVC)
+        
+        let tabBarCon = UITabBarController()
+        tabBarCon.viewControllers = [myNavController, myNavCon2]
+        present(tabBarCon, animated: true, completion: nil)
     }
 }
 

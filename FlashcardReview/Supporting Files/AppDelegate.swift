@@ -23,7 +23,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             if let _ = AuthUserService.manager.getCurrentUser() {
                 window = UIWindow(frame: UIScreen.main.bounds)
-                window?.rootViewController = CategoriesTableViewController.storyboardInstance()
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let myCategoriesVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController
+                let myNavController = UINavigationController(rootViewController: myCategoriesVC)
+                
+                let allQuestionsVC = storyboard.instantiateViewController(withIdentifier: "AllQuestionsTVC") as! AllDatabaseQuestionsTableViewController
+                let myNavCon2 = UINavigationController(rootViewController: allQuestionsVC)
+                
+                let tabBarCon = UITabBarController()
+                tabBarCon.viewControllers = [myNavController, myNavCon2]
+                
+                
+                window?.rootViewController = tabBarCon
+                
+                
+//                window?.rootViewController = CategoriesTableViewController.storyboardInstance()
                 window?.makeKeyAndVisible()
             } else {
                 window = UIWindow(frame: UIScreen.main.bounds)

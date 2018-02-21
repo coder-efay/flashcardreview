@@ -14,6 +14,12 @@ class QuestionsTableViewController: UITableViewController {
     
     var category: String?
     
+    var allQuestionsInDatabase: [Card] = [] {
+        didSet {
+            print("===== All Questions in Database: \(allQuestionsInDatabase) =====")
+        }
+    }
+    
     var questions: [Card] = [] {
         didSet {
             tableView.reloadData()
@@ -35,6 +41,10 @@ class QuestionsTableViewController: UITableViewController {
         DBService.manager.getCardsFromCategory(fromUserID: (currentUser?.uid)!, category: category!) { (categoryCards) in
             self.questions = categoryCards
         }
+        
+        DBService.manager.getAllCards { (cards) in
+            self.allQuestionsInDatabase = cards
+        }
     }
 
 
@@ -42,7 +52,6 @@ class QuestionsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return questions.count
     }
 
