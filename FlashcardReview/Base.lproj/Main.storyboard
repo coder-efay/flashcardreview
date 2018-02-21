@@ -198,13 +198,13 @@
         <!--All Cards-->
         <scene sceneID="F6O-v1-Z1c">
             <objects>
-                <tableViewController storyboardIdentifier="AllQuestionsTVC" title="All Cards" id="Pkf-W4-yBx" customClass="AllDatabaseQuestionsTableViewController" customModule="FlashcardReview" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AllDatabaseQuestionsTableViewController" title="All Cards" id="Pkf-W4-yBx" customClass="AllDatabaseQuestionsTableViewController" customModule="FlashcardReview" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xIW-BL-ZC3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ZB2-5v-bst" detailTextLabel="fmB-Kj-vmv" style="IBUITableViewCellStyleSubtitle" id="OVV-CQ-yXt">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AllQCardCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllQCardCell" textLabel="ZB2-5v-bst" detailTextLabel="fmB-Kj-vmv" style="IBUITableViewCellStyleSubtitle" id="OVV-CQ-yXt">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OVV-CQ-yXt" id="EZH-rz-kff">
@@ -713,8 +713,11 @@
                 <tabBarController storyboardIdentifier="TabBarCon" automaticallyAdjustsScrollViewInsets="NO" id="Ta0-9F-7PU" customClass="TabBarController" customModule="FlashcardReview" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9fg-LC-HjY">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <color key="selectedImageTintColor" red="1" green="0.5302794931" blue="0.57964875569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Usk-3z-yW1" kind="relationship" relationship="viewControllers" id="KQ9-qN-YAX"/>

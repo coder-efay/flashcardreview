@@ -12,11 +12,10 @@ class AllDatabaseQuestionsTableViewController: UITableViewController {
 
     @IBOutlet weak var quizBarButton: UIBarButtonItem!
     
-    var category: String?
     
     var allQuestionsInDatabase: [Card] = [] {
         didSet {
-            print("===== All Questions in Database: \(allQuestionsInDatabase) =====")
+            tableView.reloadData()
             if allQuestionsInDatabase.count >= 1 {
                 quizBarButton.isEnabled = true
             } else {
@@ -27,13 +26,11 @@ class AllDatabaseQuestionsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let currentUser = AuthUserService.manager.getCurrentUser()
+        
         DBService.manager.getAllCards { (cards) in
             self.allQuestionsInDatabase = cards
         }
     }
-    
-    
     
     // MARK: - Table view data source
     
@@ -43,16 +40,13 @@ class AllDatabaseQuestionsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AllQCardCell", for: indexPath)
         let card = allQuestionsInDatabase[indexPath.row]
         cell.textLabel?.text = card.question
         cell.detailTextLabel?.text = card.answer
         return cell
     }
-    
-    
-    
-    
+
     
     // MARK: - Navigation
     
@@ -68,7 +62,5 @@ class AllDatabaseQuestionsTableViewController: UITableViewController {
             }
         }
     }
-    
-    
 }
 

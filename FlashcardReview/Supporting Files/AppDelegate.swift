@@ -25,20 +25,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 window = UIWindow(frame: UIScreen.main.bounds)
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
                 let myCategoriesVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController
+                myCategoriesVC.tabBarItem = UITabBarItem(title: "My Cards", image: #imageLiteral(resourceName: "cards"), tag: 0)
                 let myNavController = UINavigationController(rootViewController: myCategoriesVC)
                 
-                let allQuestionsVC = storyboard.instantiateViewController(withIdentifier: "AllQuestionsTVC") as! AllDatabaseQuestionsTableViewController
+                let allQuestionsVC = storyboard.instantiateViewController(withIdentifier: "AllDatabaseQuestionsTableViewController") as! AllDatabaseQuestionsTableViewController
+                allQuestionsVC.tabBarItem = UITabBarItem(title: "All Cards", image: #imageLiteral(resourceName: "4squares"), tag: 1)
                 let myNavCon2 = UINavigationController(rootViewController: allQuestionsVC)
                 
                 let tabBarCon = UITabBarController()
                 tabBarCon.viewControllers = [myNavController, myNavCon2]
-                
-                
+                                
                 window?.rootViewController = tabBarCon
-                
-                
-//                window?.rootViewController = CategoriesTableViewController.storyboardInstance()
+
                 window?.makeKeyAndVisible()
             } else {
                 window = UIWindow(frame: UIScreen.main.bounds)
