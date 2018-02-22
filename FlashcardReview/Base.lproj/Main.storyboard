@@ -135,7 +135,7 @@
             </objects>
             <point key="canvasLocation" x="-635" y="571"/>
         </scene>
-        <!--My Topics-->
+        <!--Categories Table View Controller-->
         <scene sceneID="hv5-kI-Bx8">
             <objects>
                 <tableViewController storyboardIdentifier="CategoriesTableViewController" id="wfR-iw-DUK" customClass="CategoriesTableViewController" customModule="FlashcardReview" customModuleProvider="target" sceneMemberID="viewController">
@@ -178,7 +178,7 @@
                             <outlet property="delegate" destination="wfR-iw-DUK" id="SMs-zu-4Wa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Topics" largeTitleDisplayMode="always" id="60A-Ut-acD">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="60A-Ut-acD">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="n90-G4-iHh">
                             <connections>
                                 <action selector="logOutButtonPressed:" destination="wfR-iw-DUK" id="Ssq-Pm-fWN"/>

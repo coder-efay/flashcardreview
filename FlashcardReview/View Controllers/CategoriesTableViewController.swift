@@ -30,11 +30,15 @@ class CategoriesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.navigationController?.navigationBar.barTintColor = UIColor(red:1.00, green:0.53, blue:0.58, alpha:1.0)
         self.navigationController?.navigationBar.tintColor = UIColor.white
 //        self.tabBarController?.tabBar.barTintColor = UIColor(red:1.00, green:0.53, blue:0.58, alpha:1.0)
         self.tabBarController?.tabBar.tintColor = UIColor(red:1.00, green:0.53, blue:0.58, alpha:1.0)
         let currentUser = AuthUserService.manager.getCurrentUser()
+        
+        self.title = "My Flashcards"
+        
         DBService.manager.getCurrentUsersCategories(fromUserID: (currentUser?.uid)!) { (userCategories) in
             self.categories = userCategories
         }
