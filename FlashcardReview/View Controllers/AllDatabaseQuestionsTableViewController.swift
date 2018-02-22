@@ -26,7 +26,8 @@ class AllDatabaseQuestionsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.barTintColor = UIColor(red:1.00, green:0.53, blue:0.58, alpha:1.0)
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         DBService.manager.getAllCards { (cards) in
             self.allQuestionsInDatabase = cards
         }

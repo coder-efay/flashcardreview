@@ -62,7 +62,7 @@ extension LoginViewController: AuthUserServiceDelegate {
         let myCategoriesVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController
         let myNavController = UINavigationController(rootViewController: myCategoriesVC)
         
-        let allQuestionsVC = storyboard.instantiateViewController(withIdentifier: "AllQuestionsTVC") as! AllDatabaseQuestionsTableViewController
+        let allQuestionsVC = storyboard.instantiateViewController(withIdentifier: "AllDatabaseQuestionsTableViewController") as! AllDatabaseQuestionsTableViewController
         let myNavCon2 = UINavigationController(rootViewController: allQuestionsVC)
         
         let tabBarCon = UITabBarController()
