@@ -27,11 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 
                 let myCategoriesVC = storyboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as! CategoriesTableViewController
-                myCategoriesVC.tabBarItem = UITabBarItem(title: "My Cards", image: #imageLiteral(resourceName: "cards"), tag: 0)
+                myCategoriesVC.tabBarItem = UITabBarItem(title: "My Flashcards", image: #imageLiteral(resourceName: "cards"), tag: 0)
                 let myNavController = UINavigationController(rootViewController: myCategoriesVC)
                 
                 let allQuestionsVC = storyboard.instantiateViewController(withIdentifier: "AllDatabaseQuestionsTableViewController") as! AllDatabaseQuestionsTableViewController
-                allQuestionsVC.tabBarItem = UITabBarItem(title: "All Cards", image: #imageLiteral(resourceName: "4squares"), tag: 1)
+                allQuestionsVC.tabBarItem = UITabBarItem(title: "All Flashcards", image: #imageLiteral(resourceName: "4squares"), tag: 1)
                 let myNavCon2 = UINavigationController(rootViewController: allQuestionsVC)
                 
                 let tabBarCon = UITabBarController()

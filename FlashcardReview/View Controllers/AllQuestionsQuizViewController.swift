@@ -32,7 +32,7 @@ class AllQuestionsQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "All Questions Quiz"
+        self.title = "All Flashcards"
         randomCardButton.layer.borderWidth = 1
         randomCardButton.layer.borderColor = UIColor.black.cgColor
         nextCardButton.layer.borderWidth = 1
